@@ -1,69 +1,41 @@
-'use client';
+import { Metadata } from 'next';
+import Header from '@/components/common/Header';
+import TemplateEditor from '@/components/editor/TemplateEditor';
+import { allTemplates } from '@/lib/template-data';
+import { notFound } from 'next/navigation';
 
-import { useParams } from 'next/navigation';
-import { useState } from 'react';
-import EditorCanvas from '@/components/editor/EditorCanvas';
-import EditorToolbar from '@/components/editor/EditorToolbar';
-import PropertyPanel from '@/components/editor/PropertyPanel';
+interface EditorPageProps {
+  params: {
+    templateId: string;
+  };
+}
 
-export default function TemplateEditor() {
-  const params = useParams();
-  const templateId = params.templateId as string;
+export async function generateMetadata({ params }: EditorPageProps): Promise<Metadata> {
+  const template = allTemplates.find(t => t.id === params.templateId);
   
-  const [templateData, setTemplateData] = useState<Record<string, any>>({});
-  const [canUndo, setCanUndo] = useState(false);
-  const [canRedo, setCanRedo] = useState(false);
+  if (!template) {
+    return {
+      title: 'Template Not Found',
+    };
+  }
 
-  const handleSave = () => {
-    console.log('Saving template...', templateData);
-    // Implement save functionality
+  return {
+    title: `Edit ${template.name} | BioDatawala`,
+    description: `Customize and download ${template.name}. ${template.description}`,
   };
+}
 
-  const handleUndo = () => {
-    console.log('Undo');
-    // Implement undo functionality
-  };
+export default function EditorPage({ params }: EditorPageProps) {
+  const template = allTemplates.find(t => t.id === params.templateId);
 
-  const handleRedo = () => {
-    console.log('Redo');
-    // Implement redo functionality
-  };
-
-  const handleDownload = () => {
-    console.log('Downloading...');
-    // Implement PDF download
-  };
-
-  const handleDataChange = (data: Record<string, any>) => {
-    setTemplateData(data);
-  };
+  if (!template) {
+    notFound();
+  }
 
   return (
-    <div className="flex flex-col h-screen">
-      {/* Toolbar */}
-      <EditorToolbar
-        onSave={handleSave}
-        onUndo={handleUndo}
-        onRedo={handleRedo}
-        onDownload={handleDownload}
-        canUndo={canUndo}
-        canRedo={canRedo}
-      />
-
-      {/* Main Editor Layout */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Canvas */}
-        <div className="flex-1">
-          <EditorCanvas
-            templateId={templateId}
-            data={templateData}
-            onDataChange={handleDataChange}
-          />
-        </div>
-
-        {/* Property Panel */}
-        <PropertyPanel />
-      </div>
-    </div>
+    <>
+      <Header />
+      <TemplateEditor template={template} />
+    </>
   );
 }
