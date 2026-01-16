@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /templates/
+Allow: /services/
+Allow: /blog/
+Disallow: /admin/
+Disallow: /user/
+Disallow: /checkout/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://biodatawala.in/sitemap.xml
