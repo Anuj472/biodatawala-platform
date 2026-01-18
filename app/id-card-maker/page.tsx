@@ -6,9 +6,9 @@ import Footer from '@/components/common/Footer';
 import { idCardTemplates } from '@/lib/template-data';
 
 export const metadata: Metadata = {
-  title: 'ID Card Maker Online Free | Employee, Student, Visitor Cards - BioDatawala',
-  description: 'Create professional ID cards online for employees, students, events, and visitors. 10+ templates with photo, barcode, and QR code support. Download instantly.',
-  keywords: 'ID card maker, employee ID card, student ID card, visitor pass, event badge, corporate ID card maker online',
+  title: 'ID Card Maker Online Free | Employee, Student ID Card Creator - BioDatawala',
+  description: 'Create professional ID cards online for employees, students, visitors, and events. 10+ templates with photo, barcode, QR code. Download instantly.',
+  keywords: 'id card maker, employee id card, student id card, visitor pass, event pass, corporate id card online',
 };
 
 export default function IDCardMaker() {
@@ -24,10 +24,10 @@ export default function IDCardMaker() {
                 Professional ID Card Maker
               </h1>
               <p className="text-xl mb-6">
-                Create employee IDs, student cards, visitor passes, and event badges instantly. 
-                Professional templates with photo, barcode, and QR code support.
+                Create employee ID cards, student IDs, visitor passes, and event badges online. 
+                Add photos, barcodes, QR codes. Download print-ready PDFs instantly.
               </p>
-              <Button size="lg">Create ID Card Free</Button>
+              <Button size="lg" className="bg-white text-indigo-600 hover:bg-gray-100">Create ID Card Free</Button>
             </div>
           </div>
         </section>
@@ -48,123 +48,75 @@ export default function IDCardMaker() {
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-4xl">
             <article className="prose prose-lg max-w-none">
-              <h2 className="text-3xl font-bold mb-6">Complete Guide to Creating ID Cards</h2>
+              <h2 className="text-3xl font-bold mb-6">Complete Guide to Creating Professional ID Cards</h2>
               
-              <h3 className="text-2xl font-bold mt-8 mb-4">Why Professional ID Cards Matter</h3>
-              <p className="text-gray-700 mb-4">
-                ID cards are essential for security, access control, and professional identity. Whether for corporate offices, 
-                educational institutions, events, or visitor management, a well-designed ID card enhances credibility, ensures security, 
-                and creates a professional impression.
-              </p>
-
               <h3 className="text-2xl font-bold mt-8 mb-4">Types of ID Cards</h3>
               
-              <h4 className="text-xl font-bold mt-6 mb-3">1. Corporate Employee ID Cards</h4>
+              <h4 className="text-xl font-bold mt-6 mb-3">1. Employee ID Cards</h4>
               <p className="text-gray-700 mb-4">
-                Professional employee identification with photo, name, designation, employee ID number, and company logo. 
-                Often includes barcode or magnetic stripe for access control systems. Essential for building security and attendance tracking.
+                Corporate employee ID cards with photo, name, designation, employee ID number, department, and company logo. 
+                Include security features like barcodes or magnetic strips for access control.
               </p>
 
               <h4 className="text-xl font-bold mt-6 mb-3">2. Student ID Cards</h4>
               <p className="text-gray-700 mb-4">
-                School or college identification featuring student photo, name, roll number, class/grade, and institution logo. 
-                May include library access, mess facility, and academic year. Often used for examination halls and campus facilities.
+                School and college student ID cards with photo, roll number, class/course, academic year, and institution logo. 
+                Can include library membership, bus pass, or meal plan information.
               </p>
 
               <h4 className="text-xl font-bold mt-6 mb-3">3. Visitor Passes</h4>
               <p className="text-gray-700 mb-4">
-                Temporary identification for guests and visitors with date, time, visiting department, and host name. 
-                Security-focused design with validity period clearly marked. Often color-coded for different access levels.
+                Temporary passes for office visitors with date, time, purpose of visit, and host employee information. 
+                Typically valid for single day or specific time period.
               </p>
 
-              <h4 className="text-xl font-bold mt-6 mb-3">4. Event Passes & Conference Badges</h4>
+              <h4 className="text-xl font-bold mt-6 mb-3">4. Event Badges</h4>
               <p className="text-gray-700 mb-4">
-                Attendee identification for conferences, seminars, and events. Includes participant name, company/organization, 
-                event name, and access level. Often features colorful branding matching event theme.
-              </p>
-
-              <h4 className="text-xl font-bold mt-6 mb-3">5. Membership Cards</h4>
-              <p className="text-gray-700 mb-4">
-                Club or organization membership identification with member details, membership tier, validity period, and benefits. 
-                Used by gyms, libraries, associations, and loyalty programs.
+                Conference, seminar, or trade show badges with attendee name, company, designation, and access level. 
+                Can include schedule, QR code for check-in, and networking features.
               </p>
 
               <h3 className="text-2xl font-bold mt-8 mb-4">Essential Elements of ID Cards</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li><strong>Photo</strong>: Clear, professional headshot with plain background</li>
-                <li><strong>Name</strong>: Full name in legible font</li>
-                <li><strong>ID Number</strong>: Unique identification number</li>
+                <li><strong>Photo</strong>: Clear headshot with plain background</li>
+                <li><strong>Name</strong>: Full name prominently displayed</li>
+                <li><strong>ID Number</strong>: Unique identifier</li>
+                <li><strong>Organization Logo</strong>: Company/institution branding</li>
                 <li><strong>Designation/Role</strong>: Job title or student class</li>
-                <li><strong>Organization Logo</strong>: Company or institution branding</li>
-                <li><strong>Barcode/QR Code</strong>: For digital scanning and access control</li>
-                <li><strong>Validity Period</strong>: Issue and expiry dates</li>
-                <li><strong>Security Features</strong>: Holograms, UV printing (for premium cards)</li>
+                <li><strong>Validity Period</strong>: Expiry date if applicable</li>
+                <li><strong>Barcode/QR Code</strong>: For scanning and verification</li>
+                <li><strong>Emergency Contact</strong>: Optional but recommended</li>
+                <li><strong>Signature</strong>: Authorized signatory</li>
               </ul>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Standard ID Card Sizes</h3>
-              <div className="bg-blue-50 p-6 rounded-lg mb-6">
-                <ul className="space-y-2 text-gray-700">
-                  <li><strong>CR80 (Standard)</strong>: 85.6mm × 53.98mm (Same as credit card)</li>
-                  <li><strong>CR79</strong>: 85mm × 54mm (Slightly smaller for lanyards)</li>
-                  <li><strong>CR100</strong>: 98mm × 67mm (Larger format for more information)</li>
-                </ul>
-              </div>
-
-              <h3 className="text-2xl font-bold mt-8 mb-4">Design Best Practices</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Security Features</h3>
               <ol className="list-decimal pl-6 mb-6 text-gray-700 space-y-2">
-                <li><strong>Use brand colors</strong>: Maintain organizational color scheme</li>
-                <li><strong>Keep it simple</strong>: Avoid cluttered designs</li>
-                <li><strong>Ensure readability</strong>: Use clear, legible fonts (minimum 8pt)</li>
-                <li><strong>High contrast</strong>: Dark text on light background or vice versa</li>
-                <li><strong>Quality photo</strong>: Minimum 300 DPI for printing</li>
-                <li><strong>Include contact info</strong>: Emergency number or address on back</li>
-                <li><strong>Consider orientation</strong>: Horizontal or vertical layout</li>
-                <li><strong>Security features</strong>: Add watermarks or special fonts</li>
+                <li><strong>Holographic Overlays</strong>: Prevent tampering and duplication</li>
+                <li><strong>Barcodes</strong>: For quick scanning and access control</li>
+                <li><strong>QR Codes</strong>: Store additional information digitally</li>
+                <li><strong>Magnetic Strips</strong>: For swipe card access systems</li>
+                <li><strong>RFID Chips</strong>: Contactless access control</li>
+                <li><strong>UV Printing</strong>: Invisible features visible under UV light</li>
+                <li><strong>Microtext</strong>: Tiny text difficult to replicate</li>
               </ol>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">ID Card Printing Options</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-                <div className="bg-green-50 p-6 rounded-lg">
-                  <h4 className="font-bold text-lg mb-3">🖨️ PVC Cards (Recommended)</h4>
-                  <ul className="text-sm space-y-2">
-                    <li>✅ Durable and waterproof</li>
-                    <li>✅ Professional finish</li>
-                    <li>✅ Long-lasting (2-3 years)</li>
-                    <li>✅ Can add magnetic stripe</li>
-                    <li>✅ Cost: ₹20-50 per card</li>
-                  </ul>
-                </div>
-                <div className="bg-yellow-50 p-6 rounded-lg">
-                  <h4 className="font-bold text-lg mb-3">📄 Paper/Laminated</h4>
-                  <ul className="text-sm space-y-2">
-                    <li>✅ Budget-friendly</li>
-                    <li>✅ Quick to produce</li>
-                    <li>✅ Good for temporary use</li>
-                    <li>✅ Easy to update</li>
-                    <li>✅ Cost: ₹5-15 per card</li>
-                  </ul>
-                </div>
-              </div>
-
-              <h3 className="text-2xl font-bold mt-8 mb-4">Bulk ID Card Creation Tips</h3>
-              <p className="text-gray-700 mb-4">
-                For organizations needing multiple cards:
-              </p>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Best Practices</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li>Prepare a spreadsheet with all employee/student data</li>
-                <li>Collect uniform photos (same dimensions, background)</li>
-                <li>Use consistent naming convention for files</li>
-                <li>Choose single template for entire batch</li>
-                <li>Generate unique ID numbers systematically</li>
-                <li>Review and proofread before bulk printing</li>
-                <li>Consider professional printing services for large quantities</li>
+                <li>Use high-resolution photos (passport size recommended)</li>
+                <li>Maintain consistent design across all cards</li>
+                <li>Include both sides - front and back information</li>
+                <li>Use durable PVC cards for longevity</li>
+                <li>Implement clear color coding for departments/access levels</li>
+                <li>Regular audits and replacement of expired cards</li>
+                <li>Secure storage and issuance process</li>
+                <li>Clear policy for lost or stolen cards</li>
               </ul>
 
               <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-8 rounded-lg text-center mt-12">
-                <h3 className="text-2xl font-bold mb-4">Ready to Create Professional ID Cards?</h3>
-                <p className="mb-6">Design and download in minutes</p>
+                <h3 className="text-2xl font-bold mb-4">Start Creating Professional ID Cards</h3>
+                <p className="mb-6">Free templates, easy customization, instant download</p>
                 <Button size="lg" className="bg-white text-indigo-600 hover:bg-gray-100">
-                  Start Creating →
+                  Create ID Card Now →
                 </Button>
               </div>
             </article>
