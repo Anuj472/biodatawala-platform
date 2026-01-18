@@ -3,12 +3,12 @@ import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import TemplateCard from '@/components/common/TemplateCard';
 import Button from '@/components/common/Button';
-import { portfolioTemplates } from '@/lib/template-data';
+import { portfolioWebsiteTemplates } from '@/lib/template-data';
 
 export const metadata: Metadata = {
-  title: 'Portfolio Website Templates Free | Professional Portfolio Builder - BioDatawala',
-  description: 'Create stunning portfolio websites for designers, developers, photographers. 10+ responsive templates. Free to customize, showcase your work professionally.',
-  keywords: 'portfolio website, portfolio template, online portfolio, designer portfolio, developer portfolio, creative portfolio',
+  title: 'Portfolio Website Builder | Professional Personal Portfolio Sites - BioDatawala',
+  description: 'Create stunning portfolio websites to showcase your work. Designer, developer, photographer, and freelancer templates. No coding required.',
+  keywords: 'portfolio website, personal website builder, online portfolio, designer portfolio, developer portfolio, freelancer website',
 };
 
 export default function PortfolioWebsites() {
@@ -17,17 +17,17 @@ export default function PortfolioWebsites() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white py-16">
+        <section className="bg-gradient-to-r from-purple-700 to-indigo-800 text-white py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Portfolio Website Templates
+                Portfolio Website Builder
               </h1>
               <p className="text-xl mb-6">
-                Build a stunning online portfolio to showcase your work. Perfect for designers, developers, 
-                photographers, and creative professionals. Responsive, modern templates that make you stand out.
+                Create a professional portfolio website to showcase your work and attract clients. Beautiful templates for 
+                designers, developers, photographers, and freelancers. No coding required.
               </p>
-              <Button size="lg">Create Portfolio Free</Button>
+              <Button size="lg">Build Portfolio Free</Button>
             </div>
           </div>
         </section>
@@ -37,7 +37,7 @@ export default function PortfolioWebsites() {
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Professional Portfolio Templates</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {portfolioTemplates.map((template) => (
+              {portfolioWebsiteTemplates.map((template) => (
                 <TemplateCard key={template.id} template={template} />
               ))}
             </div>
@@ -48,171 +48,204 @@ export default function PortfolioWebsites() {
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-4xl">
             <article className="prose prose-lg max-w-none">
-              <h2 className="text-3xl font-bold mb-6">Complete Guide to Creating Portfolio Websites</h2>
+              <h2 className="text-3xl font-bold mb-6">Complete Guide to Portfolio Websites</h2>
               
               <h3 className="text-2xl font-bold mt-8 mb-4">Why You Need a Portfolio Website</h3>
               <p className="text-gray-700 mb-4">
-                In today's digital age, a portfolio website is essential for showcasing your skills and attracting 
-                clients or employers. It's your personal brand hub - a place to display your best work, tell your 
-                story, and establish credibility. Unlike social media platforms, you own and control your portfolio 
-                completely.
+                In 2026, a portfolio website is no longer optional for creative professionals and freelancers—it's essential. 
+                Your portfolio is your digital storefront, showcasing your best work 24/7 to potential clients and employers 
+                worldwide. While LinkedIn and Instagram have their place, a dedicated portfolio website gives you complete 
+                control over your professional narrative, demonstrates your expertise, and significantly increases your 
+                chances of landing high-paying clients or dream jobs.
               </p>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Essential Portfolio Elements</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Essential Portfolio Website Sections</h3>
+              
+              <h4 className="text-xl font-bold mt-6 mb-3">1. Homepage/Hero Section</h4>
+              <p className="text-gray-700 mb-4">
+                <strong>Purpose:</strong> Make a powerful first impression in 3 seconds<br />
+                <strong>Include:</strong> Your name, professional title, brief tagline, eye-catching hero image<br />
+                <strong>Example:</strong> "Hi, I'm Sarah. A UI/UX Designer crafting digital experiences that users love."<br />
+              </p>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">2. About Me</h4>
+              <p className="text-gray-700 mb-4">
+                Tell your professional story. Include:
+              </p>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li><strong>Homepage/Hero Section</strong>: Compelling introduction with your name and profession</li>
-                <li><strong>About Page</strong>: Your story, background, and what makes you unique</li>
-                <li><strong>Work/Projects Gallery</strong>: Showcase your best 6-12 projects</li>
-                <li><strong>Case Studies</strong>: Detailed breakdowns of key projects</li>
-                <li><strong>Skills & Services</strong>: What you offer and your expertise areas</li>
-                <li><strong>Testimonials</strong>: Client reviews and recommendations</li>
-                <li><strong>Contact Form</strong>: Easy way for visitors to reach you</li>
-                <li><strong>Resume/CV Download</strong>: Downloadable PDF of your credentials</li>
+                <li>Your background and journey</li>
+                <li>What you do and who you serve</li>
+                <li>Your unique approach or philosophy</li>
+                <li>Professional photo (approachable, professional)</li>
+                <li>Key achievements or credentials</li>
               </ul>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Portfolio Templates by Profession</h3>
-              
-              <h4 className="text-xl font-bold mt-6 mb-3">1. Designer Portfolio</h4>
+              <h4 className="text-xl font-bold mt-6 mb-3">3. Portfolio/Work Showcase</h4>
               <p className="text-gray-700 mb-4">
-                <strong>Focus:</strong> Visual storytelling, large images, white space, case studies with design process.
-                <br /><strong>Best for:</strong> Graphic designers, UI/UX designers, brand designers, illustrators.
-                <br /><strong>Key features:</strong> Image galleries, before/after comparisons, client logos, Behance/Dribbble integration.
-              </p>
-
-              <h4 className="text-xl font-bold mt-6 mb-3">2. Developer Portfolio</h4>
-              <p className="text-gray-700 mb-4">
-                <strong>Focus:</strong> Technical skills, live project links, GitHub integration, code examples.
-                <br /><strong>Best for:</strong> Web developers, software engineers, full-stack developers.
-                <br /><strong>Key features:</strong> Tech stack icons, GitHub stats, live demos, code snippets.
-              </p>
-
-              <h4 className="text-xl font-bold mt-6 mb-3">3. Photographer Portfolio</h4>
-              <p className="text-gray-700 mb-4">
-                <strong>Focus:</strong> High-resolution images, minimal text, full-screen galleries.
-                <br /><strong>Best for:</strong> Photographers, videographers, visual artists.
-                <br /><strong>Key features:</strong> Lightbox galleries, category filtering, Instagram feed, booking system.
-              </p>
-
-              <h4 className="text-xl font-bold mt-6 mb-3">4. Writer/Content Creator Portfolio</h4>
-              <p className="text-gray-700 mb-4">
-                <strong>Focus:</strong> Published articles, writing samples, blog integration.
-                <br /><strong>Best for:</strong> Writers, journalists, content strategists, copywriters.
-                <br /><strong>Key features:</strong> Article excerpts, publication logos, testimonials, Medium integration.
-              </p>
-
-              <h3 className="text-2xl font-bold mt-8 mb-4">Portfolio Design Best Practices</h3>
-              
-              <div className="bg-cyan-50 p-6 rounded-lg mb-6">
-                <h4 className="font-bold mb-3 text-cyan-800">Visual Design</h4>
-                <ul className="text-gray-700 space-y-2 text-sm">
-                  <li>✓ Keep it clean and uncluttered</li>
-                  <li>✓ Use consistent color scheme (2-3 colors max)</li>
-                  <li>✓ Choose readable fonts (1 heading font, 1 body font)</li>
-                  <li>✓ Ensure mobile responsiveness</li>
-                  <li>✓ Use high-quality images (optimize for web)</li>
-                  <li>✓ Implement smooth transitions and animations</li>
-                </ul>
-              </div>
-
-              <div className="bg-blue-50 p-6 rounded-lg mb-6">
-                <h4 className="font-bold mb-3 text-blue-800">Content Strategy</h4>
-                <ul className="text-gray-700 space-y-2 text-sm">
-                  <li>✓ Show only your best work (quality over quantity)</li>
-                  <li>✓ Include variety to demonstrate range</li>
-                  <li>✓ Write compelling project descriptions</li>
-                  <li>✓ Explain your process and results</li>
-                  <li>✓ Keep content updated regularly</li>
-                  <li>✓ Use storytelling to engage visitors</li>
-                </ul>
-              </div>
-
-              <h3 className="text-2xl font-bold mt-8 mb-4">How to Present Your Projects</h3>
-              <p className="text-gray-700 mb-4">
-                Each project in your portfolio should tell a complete story:
-              </p>
-              <ol className="list-decimal pl-6 mb-6 text-gray-700 space-y-2">
-                <li><strong>Project Title</strong>: Clear, descriptive name</li>
-                <li><strong>Client/Company</strong>: Who you worked for (if allowed)</li>
-                <li><strong>Role</strong>: Your specific contribution</li>
-                <li><strong>Challenge/Problem</strong>: What needed to be solved</li>
-                <li><strong>Solution/Approach</strong>: How you tackled it</li>
-                <li><strong>Results/Impact</strong>: Measurable outcomes when possible</li>
-                <li><strong>Technologies/Tools</strong>: What you used</li>
-                <li><strong>Visuals</strong>: Screenshots, mockups, or photos</li>
-                <li><strong>Links</strong>: Live site, GitHub repo, or case study</li>
-              </ol>
-
-              <h3 className="text-2xl font-bold mt-8 mb-4">About Page Elements</h3>
-              <p className="text-gray-700 mb-4">
-                Your About page should create a personal connection:
+                <strong>The most important section.</strong> Display 6-12 of your best projects. For each project include:
               </p>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li><strong>Professional Photo</strong>: High-quality headshot or creative portrait</li>
-                <li><strong>Your Story</strong>: How you got into your field, what drives you</li>
-                <li><strong>Experience</strong>: Years in industry, notable projects</li>
-                <li><strong>Skills & Expertise</strong>: What you're great at</li>
-                <li><strong>Clients/Companies</strong>: Logos of organizations you've worked with</li>
-                <li><strong>Education/Certifications</strong>: Relevant credentials</li>
-                <li><strong>Personal Touch</strong>: Hobbies, interests that humanize you</li>
+                <li><strong>Project Title</strong>: Clear, descriptive name</li>
+                <li><strong>Visual</strong>: High-quality image or mockup</li>
+                <li><strong>Description</strong>: Challenge, solution, results</li>
+                <li><strong>Role</strong>: Your specific contribution</li>
+                <li><strong>Tools/Technologies</strong>: Software or skills used</li>
+                <li><strong>Outcome</strong>: Measurable results if possible</li>
+                <li><strong>Call-to-Action</strong>: "View Case Study" or "See More"</li>
+              </ul>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">4. Services Offered</h4>
+              <p className="text-gray-700 mb-4">
+                Clearly list what you offer:
+              </p>
+              <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                <li>3-6 main services with brief descriptions</li>
+                <li>Icons or visuals for each service</li>
+                <li>Pricing (optional - can be "Starting from...")</li>
+                <li>Process overview (consultation, design, delivery)</li>
+              </ul>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">5. Testimonials/Client Reviews</h4>
+              <p className="text-gray-700 mb-4">
+                Social proof is crucial. Include:
+              </p>
+              <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                <li>3-5 client testimonials</li>
+                <li>Client name, company, and photo if possible</li>
+                <li>Specific results or outcomes they achieved</li>
+                <li>Star ratings or numerical scores</li>
+              </ul>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">6. Contact Section</h4>
+              <p className="text-gray-700 mb-4">
+                Make it easy to reach you:
+              </p>
+              <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                <li>Contact form (name, email, message, project type)</li>
+                <li>Email address and phone number</li>
+                <li>Social media links (LinkedIn, Instagram, Behance)</li>
+                <li>Location (city/country if relevant)</li>
+                <li>Availability status ("Available for projects") </li>
+              </ul>
+
+              <h3 className="text-2xl font-bold mt-8 mb-4">Portfolio Website by Profession</h3>
+              
+              <h4 className="text-xl font-bold mt-6 mb-3">Graphic Designers</h4>
+              <div className="bg-purple-50 p-4 rounded-lg mb-4">
+                <ul className="text-sm text-gray-700 space-y-1">
+                  <li>• <strong>Focus:</strong> Visual projects (logos, branding, posters)</li>
+                  <li>• <strong>Layout:</strong> Grid or masonry for visual impact</li>
+                  <li>• <strong>Showcase:</strong> Before/after, design process</li>
+                  <li>• <strong>Tools:</strong> Adobe Creative Suite proficiency</li>
+                </ul>
+              </div>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">Web Developers</h4>
+              <div className="bg-blue-50 p-4 rounded-lg mb-4">
+                <ul className="text-sm text-gray-700 space-y-1">
+                  <li>• <strong>Focus:</strong> Live websites, web apps, code samples</li>
+                  <li>• <strong>Include:</strong> GitHub links, tech stack used</li>
+                  <li>• <strong>Showcase:</strong> Responsive design demos</li>
+                  <li>• <strong>Highlight:</strong> Problem-solving and optimization</li>
+                </ul>
+              </div>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">Photographers</h4>
+              <div className="bg-pink-50 p-4 rounded-lg mb-4">
+                <ul className="text-sm text-gray-700 space-y-1">
+                  <li>• <strong>Focus:</strong> High-quality image galleries</li>
+                  <li>• <strong>Categories:</strong> Wedding, portrait, commercial, etc.</li>
+                  <li>• <strong>Layout:</strong> Full-screen galleries, lightbox viewing</li>
+                  <li>• <strong>Include:</strong> Pricing packages, booking calendar</li>
+                </ul>
+              </div>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">Writers/Content Creators</h4>
+              <div className="bg-green-50 p-4 rounded-lg mb-4">
+                <ul className="text-sm text-gray-700 space-y-1">
+                  <li>• <strong>Focus:</strong> Published articles, blog posts, samples</li>
+                  <li>• <strong>Include:</strong> Writing niche, client list</li>
+                  <li>• <strong>Showcase:</strong> Links to published work</li>
+                  <li>• <strong>Blog:</strong> Demonstrate expertise through blogging</li>
+                </ul>
+              </div>
+
+              <h3 className="text-2xl font-bold mt-8 mb-4">Design Best Practices</h3>
+              
+              <h4 className="text-xl font-bold mt-6 mb-3">Visual Design</h4>
+              <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                <li><strong>Clean Layout</strong>: Avoid clutter, use white space effectively</li>
+                <li><strong>Consistent Branding</strong>: Color scheme, fonts throughout</li>
+                <li><strong>High-Quality Images</strong>: Professional, high-res visuals only</li>
+                <li><strong>Readable Typography</strong>: 16px minimum for body text</li>
+                <li><strong>Hierarchy</strong>: Clear visual hierarchy guides visitors</li>
+              </ul>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">User Experience</h4>
+              <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                <li><strong>Fast Loading</strong>: Under 3 seconds load time</li>
+                <li><strong>Mobile Responsive</strong>: 60%+ traffic is mobile</li>
+                <li><strong>Easy Navigation</strong>: Clear menu, max 5-7 items</li>
+                <li><strong>Smooth Scrolling</strong>: Pleasant browsing experience</li>
+                <li><strong>Clear CTAs</strong>: "Contact Me", "View Project" buttons</li>
               </ul>
 
               <h3 className="text-2xl font-bold mt-8 mb-4">SEO for Portfolio Websites</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li>Use descriptive page titles with your name and profession</li>
-                <li>Write unique meta descriptions for each page</li>
-                <li>Include alt text for all images</li>
-                <li>Use relevant keywords naturally in content</li>
-                <li>Create a blog to regularly publish content</li>
-                <li>Build backlinks through guest posts and collaborations</li>
-                <li>Optimize page load speed</li>
-                <li>Submit sitemap to Google Search Console</li>
+                <li><strong>Title Tags</strong>: "[Your Name] - [Your Profession] Portfolio"</li>
+                <li><strong>Meta Descriptions</strong>: Compelling description with keywords</li>
+                <li><strong>Alt Text</strong>: Describe images for search engines</li>
+                <li><strong>URL Structure</strong>: Clean URLs (yourname.com/web-design)</li>
+                <li><strong>Keywords</strong>: Use profession + location naturally</li>
+                <li><strong>Blog</strong>: Regular posts help SEO ranking</li>
               </ul>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Portfolio Must-Haves vs Nice-to-Haves</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="bg-green-50 p-6 rounded-lg">
-                  <h4 className="font-bold mb-3 text-green-800">Must-Haves ✓</h4>
-                  <ul className="text-gray-700 space-y-2 text-sm">
-                    <li>• Clear navigation</li>
-                    <li>• Contact information</li>
-                    <li>• Best work samples</li>
-                    <li>• About section</li>
-                    <li>• Mobile responsive</li>
-                    <li>• Fast loading</li>
-                    <li>• Professional domain</li>
-                  </ul>
-                </div>
-                <div className="bg-yellow-50 p-6 rounded-lg">
-                  <h4 className="font-bold mb-3 text-yellow-800">Nice-to-Haves +</h4>
-                  <ul className="text-gray-700 space-y-2 text-sm">
-                    <li>• Blog section</li>
-                    <li>• Testimonials carousel</li>
-                    <li>• Newsletter signup</li>
-                    <li>• Social proof badges</li>
-                    <li>• Live chat</li>
-                    <li>• Dark mode toggle</li>
-                    <li>• Animations</li>
-                  </ul>
-                </div>
-              </div>
-
-              <h3 className="text-2xl font-bold mt-8 mb-4">Common Portfolio Mistakes</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Technical Considerations</h3>
+              
+              <h4 className="text-xl font-bold mt-6 mb-3">Domain & Hosting</h4>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li>Showing too many projects (stick to 6-12 best)</li>
-                <li>Poor image quality or slow loading images</li>
-                <li>No clear call-to-action</li>
-                <li>Outdated work from years ago</li>
-                <li>Too much text, not enough visuals</li>
-                <li>Broken links or non-functional demos</li>
-                <li>No contact information or hidden contact form</li>
-                <li>Overly complex navigation</li>
+                <li><strong>Domain</strong>: yourname.com or yourname.design preferred</li>
+                <li><strong>Hosting</strong>: Reliable hosting (Netlify, Vercel for modern sites)</li>
+                <li><strong>SSL Certificate</strong>: HTTPS is essential (free with most hosts)</li>
+                <li><strong>Email</strong>: Professional email (name@yoursite.com)</li>
               </ul>
 
-              <div className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white p-8 rounded-lg text-center mt-12">
+              <h4 className="text-xl font-bold mt-6 mb-3">Performance</h4>
+              <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                <li>Optimize images (compress without losing quality)</li>
+                <li>Use lazy loading for images</li>
+                <li>Minimize code (CSS, JavaScript)</li>
+                <li>Use CDN for faster global loading</li>
+                <li>Enable browser caching</li>
+              </ul>
+
+              <h3 className="text-2xl font-bold mt-8 mb-4">Common Mistakes to Avoid</h3>
+              <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                <li>Showing too many projects (quality > quantity)</li>
+                <li>Missing contact information or broken contact forms</li>
+                <li>Slow loading times from large, unoptimized images</li>
+                <li>Not mobile-responsive design</li>
+                <li>Outdated work or portfolio not regularly updated</li>
+                <li>No clear call-to-action</li>
+                <li>Overly complex navigation</li>
+                <li>Missing about/bio section</li>
+              </ul>
+
+              <h3 className="text-2xl font-bold mt-8 mb-4">Maintenance & Updates</h3>
+              <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                <li>Add new projects quarterly</li>
+                <li>Remove outdated work</li>
+                <li>Update testimonials and client list</li>
+                <li>Refresh About section annually</li>
+                <li>Check all links monthly</li>
+                <li>Monitor analytics to improve</li>
+              </ul>
+
+              <div className="bg-gradient-to-r from-purple-700 to-indigo-800 text-white p-8 rounded-lg text-center mt-12">
                 <h3 className="text-2xl font-bold mb-4">Build Your Portfolio Website Today</h3>
                 <p className="mb-6">Showcase your work and attract your dream clients</p>
-                <Button size="lg" className="bg-white text-cyan-600 hover:bg-gray-100">
-                  Get Started Now →
+                <Button size="lg" className="bg-white text-purple-700 hover:bg-gray-100">
+                  Start Building Now →
                 </Button>
               </div>
             </article>
