@@ -7,8 +7,8 @@ import { coverLetterTemplates } from '@/lib/template-data';
 
 export const metadata: Metadata = {
   title: 'Cover Letter Templates Free | Professional Cover Letter Maker - BioDatawala',
-  description: 'Create professional cover letters with our free templates. Industry-specific examples for job applications. ATS-friendly formats with expert tips.',
-  keywords: 'cover letter template, job application letter, professional cover letter, cover letter format, resume cover letter, job cover letter',
+  description: 'Create winning cover letters with 10+ professional templates. ATS-friendly formats for job applications. Free to customize, instant download.',
+  keywords: 'cover letter template, job application letter, professional cover letter, cover letter format, how to write cover letter',
 };
 
 export default function CoverLetterTemplates() {
@@ -17,15 +17,15 @@ export default function CoverLetterTemplates() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-purple-700 to-indigo-700 text-white py-16">
+        <section className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Cover Letter Templates
               </h1>
               <p className="text-xl mb-6">
-                Write compelling cover letters that get noticed. Professional templates for every industry. 
-                ATS-friendly formats with proven examples. Stand out from other candidates.
+                Write compelling cover letters that get you interviews. Professional templates for every industry. 
+                ATS-optimized formats that hiring managers love. Stand out from the competition.
               </p>
               <Button size="lg">Create Cover Letter Free</Button>
             </div>
@@ -52,176 +52,175 @@ export default function CoverLetterTemplates() {
               
               <h3 className="text-2xl font-bold mt-8 mb-4">Why Cover Letters Matter in 2026</h3>
               <p className="text-gray-700 mb-4">
-                Despite the digital age, cover letters remain crucial for job applications. They provide context 
-                to your resume, showcase your personality, and demonstrate your communication skills. A well-written 
-                cover letter can be the difference between getting an interview and being overlooked.
+                Despite automation in hiring, cover letters remain crucial for job applications. They provide context 
+                to your resume, showcase your personality, and demonstrate genuine interest in the role. A well-crafted 
+                cover letter can be the difference between landing an interview and being overlooked.
               </p>
 
               <h3 className="text-2xl font-bold mt-8 mb-4">Cover Letter Structure</h3>
               
               <h4 className="text-xl font-bold mt-6 mb-3">1. Header (Contact Information)</h4>
               <p className="text-gray-700 mb-4">
-                Start with your contact details: full name, phone number, email, LinkedIn profile, and city. 
-                Follow with the date and employer's contact information including hiring manager's name, 
-                company name, and address.
+                Include your full name, address, phone number, email, and date. If applying via email, your contact 
+                info should match your resume header for consistency.
               </p>
 
-              <h4 className="text-xl font-bold mt-6 mb-3">2. Salutation</h4>
+              <h4 className="text-xl font-bold mt-6 mb-3">2. Salutation (Greeting)</h4>
               <p className="text-gray-700 mb-4">
-                Address the hiring manager by name whenever possible. Use "Dear [Name]," format. If the name 
-                is unavailable, use "Dear Hiring Manager," or "Dear [Department] Team,". Avoid generic "To Whom 
-                It May Concern."
+                Address the hiring manager by name whenever possible. "Dear [Name]" is professional. Avoid generic 
+                "To Whom It May Concern." Research LinkedIn or the company website to find the right person.
               </p>
 
-              <h4 className="text-xl font-bold mt-6 mb-3">3. Opening Paragraph</h4>
+              <h4 className="text-xl font-bold mt-6 mb-3">3. Opening Paragraph (Hook)</h4>
               <p className="text-gray-700 mb-4">
-                Hook the reader immediately. State the position you're applying for, how you found it, and why 
-                you're excited. Include a brief compelling reason why you're a great fit. First impressions matter.
+                State the position you're applying for and where you found it. Include a compelling hook - why you're 
+                excited about this opportunity. Mention any mutual connections or referrals here.
               </p>
 
-              <h4 className="text-xl font-bold mt-6 mb-3">4. Body Paragraphs (1-2 paragraphs)</h4>
+              <h4 className="text-xl font-bold mt-6 mb-3">4. Body Paragraphs (2-3 paragraphs)</h4>
               <p className="text-gray-700 mb-4">
-                <strong>Skills & Experience:</strong> Highlight your most relevant qualifications. Use specific 
-                examples and achievements. Quantify results when possible ("increased sales by 30%"). Connect 
-                your experience to the job requirements.
+                <strong>Paragraph 1:</strong> Highlight your relevant experience and achievements. Use specific examples 
+                with quantifiable results. Connect your skills to the job requirements.
               </p>
               <p className="text-gray-700 mb-4">
-                <strong>Company Fit:</strong> Show you've researched the company. Explain why you want to work 
-                there specifically. Align your values with the company's mission. Demonstrate enthusiasm.
+                <strong>Paragraph 2:</strong> Demonstrate knowledge about the company. Explain why you're interested 
+                in this specific role and organization. Show cultural fit.
+              </p>
+              <p className="text-gray-700 mb-4">
+                <strong>Paragraph 3 (Optional):</strong> Address any concerns like employment gaps or career changes. 
+                Highlight additional relevant skills or experiences.
               </p>
 
               <h4 className="text-xl font-bold mt-6 mb-3">5. Closing Paragraph</h4>
               <p className="text-gray-700 mb-4">
-                Express gratitude for their time and consideration. Reiterate your interest. Include a call to 
-                action ("I look forward to discussing..."). Maintain confidence without arrogance.
+                Reiterate your interest and enthusiasm. Include a call-to-action expressing your desire for an interview. 
+                Thank them for their time and consideration.
               </p>
 
-              <h4 className="text-xl font-bold mt-6 mb-3">6. Sign-Off</h4>
+              <h4 className="text-xl font-bold mt-6 mb-3">6. Signature</h4>
               <p className="text-gray-700 mb-4">
-                Use professional closings: "Sincerely," "Best regards," or "Kind regards," followed by your 
-                full name. Leave space for signature if printing.
+                End with "Sincerely" or "Best regards" followed by your full name. For printed letters, leave space 
+                for a handwritten signature.
               </p>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Cover Letter Examples by Situation</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Cover Letter Tips by Career Stage</h3>
               
-              <div className="space-y-6 mb-6">
-                <div className="bg-blue-50 p-6 rounded-lg">
-                  <p className="font-bold mb-3">Entry-Level/Fresher Opening:</p>
-                  <p className="text-gray-700 italic">
-                    "As a recent graduate from [University] with a degree in [Field], I am excited to apply for 
-                    the [Position] role at [Company]. During my internship at [Company], I developed strong skills 
-                    in [skill], which I am eager to apply to your team."
-                  </p>
-                </div>
-                
-                <div className="bg-green-50 p-6 rounded-lg">
-                  <p className="font-bold mb-3">Career Change Opening:</p>
-                  <p className="text-gray-700 italic">
-                    "With 5+ years of experience in [Previous Field], I am excited to leverage my transferable 
-                    skills in [New Field] as [Position] at [Company]. My background in [relevant skill] has 
-                    prepared me to contribute effectively to your team."
-                  </p>
-                </div>
+              <div className="bg-blue-50 p-6 rounded-lg mb-6">
+                <h4 className="font-bold mb-3 text-blue-800">For Freshers/Entry-Level</h4>
+                <ul className="text-gray-700 space-y-2 text-sm">
+                  <li>✓ Emphasize education, internships, and projects</li>
+                  <li>✓ Highlight soft skills and willingness to learn</li>
+                  <li>✓ Mention relevant coursework or certifications</li>
+                  <li>✓ Show enthusiasm and energy</li>
+                  <li>✓ Keep it concise - 250-300 words</li>
+                </ul>
+              </div>
 
-                <div className="bg-purple-50 p-6 rounded-lg">
-                  <p className="font-bold mb-3">Experienced Professional Opening:</p>
-                  <p className="text-gray-700 italic">
-                    "As an accomplished [Title] with 8+ years of experience driving [achievement], I am thrilled 
-                    to apply for the [Position] role at [Company]. My track record of [specific achievement] 
-                    aligns perfectly with your needs."
-                  </p>
-                </div>
+              <div className="bg-green-50 p-6 rounded-lg mb-6">
+                <h4 className="font-bold mb-3 text-green-800">For Experienced Professionals</h4>
+                <ul className="text-gray-700 space-y-2 text-sm">
+                  <li>✓ Focus on achievements and measurable impact</li>
+                  <li>✓ Highlight leadership and strategic thinking</li>
+                  <li>✓ Demonstrate industry expertise</li>
+                  <li>✓ Show how you can solve their problems</li>
+                  <li>✓ Can be slightly longer - 300-400 words</li>
+                </ul>
+              </div>
+
+              <div className="bg-purple-50 p-6 rounded-lg mb-6">
+                <h4 className="font-bold mb-3 text-purple-800">For Career Changers</h4>
+                <ul className="text-gray-700 space-y-2 text-sm">
+                  <li>✓ Address the career change directly</li>
+                  <li>✓ Highlight transferable skills</li>
+                  <li>✓ Explain your motivation for the switch</li>
+                  <li>✓ Show relevant training or preparation</li>
+                  <li>✓ Emphasize adaptability and learning ability</li>
+                </ul>
               </div>
 
               <h3 className="text-2xl font-bold mt-8 mb-4">Common Cover Letter Mistakes to Avoid</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li><strong>Generic Letters:</strong> Customize for each application, reference specific job details</li>
-                <li><strong>Repeating Resume:</strong> Add new information, tell stories behind achievements</li>
-                <li><strong>Too Long:</strong> Keep to one page maximum, 3-4 paragraphs</li>
-                <li><strong>Focusing on Yourself:</strong> Emphasize what you offer the company, not what you want</li>
-                <li><strong>Typos & Errors:</strong> Proofread multiple times, use spell check, ask someone to review</li>
-                <li><strong>Weak Opening:</strong> Start strong, avoid clichés like "I am writing to apply..."</li>
-                <li><strong>Missing Company Research:</strong> Show you understand their business and challenges</li>
-                <li><strong>Unprofessional Email:</strong> Use professional email address, not funky123@email.com</li>
+                <li><strong>Too Long</strong>: Keep it to one page (250-400 words)</li>
+                <li><strong>Generic Content</strong>: Customize for each application</li>
+                <li><strong>Repeating Resume</strong>: Add new information and context</li>
+                <li><strong>Typos and Errors</strong>: Proofread multiple times</li>
+                <li><strong>Negative Language</strong>: Focus on positive achievements</li>
+                <li><strong>Overly Formal</strong>: Be professional but personable</li>
+                <li><strong>Focusing on Yourself</strong>: Emphasize what you can offer them</li>
+                <li><strong>Weak Opening</strong>: Start with impact, not clichés</li>
               </ul>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Industry-Specific Tips</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Cover Letter Examples by Industry</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">Tech/IT</h4>
-                  <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• Mention specific technologies/languages</li>
-                    <li>• Include GitHub/portfolio links</li>
-                    <li>• Highlight problem-solving skills</li>
-                    <li>• Reference relevant projects</li>
-                  </ul>
+              <div className="space-y-6 mb-6">
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <p className="font-bold mb-3">Technology/IT:</p>
+                  <p className="text-gray-700 text-sm italic">
+                    "As a software engineer with 5+ years developing scalable web applications, I was excited to see 
+                    your opening for Senior Full Stack Developer. My experience with React, Node.js, and AWS aligns 
+                    perfectly with your tech stack, and I've successfully led teams in delivering projects 20% ahead 
+                    of schedule..."
+                  </p>
                 </div>
-                <div className="bg-green-50 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">Marketing</h4>
-                  <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• Show creativity in writing</li>
-                    <li>• Include metrics (ROI, growth %)</li>
-                    <li>• Mention campaigns you've run</li>
-                    <li>• Demonstrate brand awareness</li>
-                  </ul>
+                
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <p className="font-bold mb-3">Marketing:</p>
+                  <p className="text-gray-700 text-sm italic">
+                    "Your recent campaign for [Product] caught my attention with its innovative use of social media. 
+                    As a digital marketing specialist who increased brand engagement by 150% in my current role, I'm 
+                    eager to bring my expertise in content strategy and analytics to your team..."
+                  </p>
                 </div>
-                <div className="bg-purple-50 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">Finance</h4>
-                  <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• Emphasize analytical skills</li>
-                    <li>• Mention certifications (CFA, CPA)</li>
-                    <li>• Include quantitative achievements</li>
-                    <li>• Show attention to detail</li>
-                  </ul>
-                </div>
-                <div className="bg-orange-50 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">Creative</h4>
-                  <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• Show personality in writing</li>
-                    <li>• Link to portfolio/work samples</li>
-                    <li>• Mention creative process</li>
-                    <li>• Highlight unique perspective</li>
-                  </ul>
+
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <p className="font-bold mb-3">Finance:</p>
+                  <p className="text-gray-700 text-sm italic">
+                    "With a CFA certification and 7 years of experience in portfolio management, I've consistently 
+                    delivered returns exceeding market benchmarks by 3-5%. Your firm's focus on sustainable investing 
+                    aligns with my investment philosophy and personal values..."
+                  </p>
                 </div>
               </div>
 
               <h3 className="text-2xl font-bold mt-8 mb-4">ATS-Friendly Cover Letter Tips</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li>Use standard fonts (Arial, Calibri, Times New Roman) in 10-12pt size</li>
-                <li>Include keywords from the job description naturally</li>
-                <li>Save as .docx or .pdf (check job posting requirements)</li>
-                <li>Avoid images, graphics, or complex formatting</li>
-                <li>Use standard section headings</li>
-                <li>Keep formatting simple and clean</li>
+                <li>Use standard fonts (Arial, Calibri, Times New Roman)</li>
+                <li>Include keywords from the job description</li>
+                <li>Save as .docx or .pdf format</li>
+                <li>Avoid tables, images, or complex formatting</li>
+                <li>Use simple bullet points if needed</li>
+                <li>Don't use headers/footers for important info</li>
               </ul>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Cover Letter Length & Format</h3>
-              <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li><strong>Length:</strong> 250-400 words, maximum one page</li>
-                <li><strong>Margins:</strong> 1 inch on all sides</li>
-                <li><strong>Font Size:</strong> 10-12 point</li>
-                <li><strong>Line Spacing:</strong> 1.0 or 1.15</li>
-                <li><strong>Alignment:</strong> Left-aligned, not justified</li>
-                <li><strong>Paragraphs:</strong> 3-4 paragraphs with space between</li>
-              </ul>
-
-              <h3 className="text-2xl font-bold mt-8 mb-4">When to Submit Cover Letters</h3>
-              <div className="bg-yellow-50 p-6 rounded-lg mb-6">
-                <ul className="text-gray-700 space-y-2">
-                  <li><strong>Always Include:</strong> If the job posting asks for one</li>
-                  <li><strong>Highly Recommended:</strong> For career changes or employment gaps</li>
-                  <li><strong>Good Idea:</strong> For competitive positions or dream jobs</li>
-                  <li><strong>Optional:</strong> If posting says "cover letter optional"</li>
-                  <li><strong>Skip:</strong> Only if explicitly stated "no cover letter"</li>
-                </ul>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Email vs Formal Letter Format</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="bg-blue-50 p-6 rounded-lg">
+                  <h4 className="font-bold mb-3 text-blue-800">Email Cover Letter</h4>
+                  <ul className="text-gray-700 space-y-2 text-sm">
+                    <li>✓ Subject line with position name</li>
+                    <li>✓ Shorter, more concise (200-250 words)</li>
+                    <li>✓ Contact info in email signature</li>
+                    <li>✓ Attach resume as separate file</li>
+                    <li>✓ Mobile-friendly formatting</li>
+                  </ul>
+                </div>
+                <div className="bg-purple-50 p-6 rounded-lg">
+                  <h4 className="font-bold mb-3 text-purple-800">Formal Letter</h4>
+                  <ul className="text-gray-700 space-y-2 text-sm">
+                    <li>✓ Full header with addresses</li>
+                    <li>✓ Can be slightly longer (300-400 words)</li>
+                    <li>✓ Printed with handwritten signature</li>
+                    <li>✓ Traditional business letter format</li>
+                    <li>✓ High-quality paper for physical submission</li>
+                  </ul>
+                </div>
               </div>
 
-              <div className="bg-gradient-to-r from-purple-700 to-indigo-700 text-white p-8 rounded-lg text-center mt-12">
-                <h3 className="text-2xl font-bold mb-4">Ready to Write Your Cover Letter?</h3>
-                <p className="mb-6">Start with a professional template today</p>
-                <Button size="lg" className="bg-white text-purple-700 hover:bg-gray-100">
-                  Create Cover Letter Now →
+              <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 rounded-lg text-center mt-12">
+                <h3 className="text-2xl font-bold mb-4">Ready to Create Your Cover Letter?</h3>
+                <p className="mb-6">Land your dream job with a professional cover letter</p>
+                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
+                  Start Writing Now →
                 </Button>
               </div>
             </article>
