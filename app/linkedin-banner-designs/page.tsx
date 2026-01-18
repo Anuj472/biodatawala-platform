@@ -3,12 +3,12 @@ import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import TemplateCard from '@/components/common/TemplateCard';
 import Button from '@/components/common/Button';
-import { linkedInBannerTemplates } from '@/lib/template-data';
+import { linkedinBannerTemplates } from '@/lib/template-data';
 
 export const metadata: Metadata = {
-  title: 'LinkedIn Banner Maker Free | Professional Cover Photo Designer - BioDatawala',
-  description: 'Create eye-catching LinkedIn banners with 10+ professional templates. Perfect size 1584x396. Free to customize, instant download.',
-  keywords: 'linkedin banner, linkedin cover photo, linkedin background, professional banner design, linkedin header',
+  title: 'LinkedIn Banner Designs | Professional Profile Background Images - BioDatawala',
+  description: 'Create stunning LinkedIn banner designs that showcase your professional brand. Custom templates for all industries. Perfect size 1584x396px.',
+  keywords: 'linkedin banner, linkedin background, linkedin cover photo, professional banner design, linkedin profile picture',
 };
 
 export default function LinkedInBannerDesigns() {
@@ -17,17 +17,17 @@ export default function LinkedInBannerDesigns() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-16">
+        <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                LinkedIn Banner Designer
+                LinkedIn Banner Designs
               </h1>
               <p className="text-xl mb-6">
-                Create professional LinkedIn banners that make a powerful first impression. Perfect size (1584x396), 
-                customizable templates for every industry. Stand out and get noticed by recruiters.
+                Create professional LinkedIn banners that make a powerful first impression. Industry-specific templates 
+                optimized for 1584×396px. Stand out and showcase your personal brand.
               </p>
-              <Button size="lg">Create LinkedIn Banner Free</Button>
+              <Button size="lg">Design Banner Free</Button>
             </div>
           </div>
         </section>
@@ -37,7 +37,7 @@ export default function LinkedInBannerDesigns() {
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Professional LinkedIn Banner Templates</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {linkedInBannerTemplates.map((template) => (
+              {linkedinBannerTemplates.map((template) => (
                 <TemplateCard key={template.id} template={template} />
               ))}
             </div>
@@ -52,171 +52,180 @@ export default function LinkedInBannerDesigns() {
               
               <h3 className="text-2xl font-bold mt-8 mb-4">Why Your LinkedIn Banner Matters</h3>
               <p className="text-gray-700 mb-4">
-                Your LinkedIn banner (also called cover photo or background image) is prime real estate on your profile. 
-                It's one of the first things visitors see and plays a crucial role in your professional brand. A 
-                well-designed banner can increase profile views by up to 40% and make you more memorable to recruiters.
+                Your LinkedIn banner (also called background photo or cover image) is prime real estate on your profile. 
+                It's one of the first things visitors see, appearing prominently at the top of your profile. A professional, 
+                well-designed banner can increase profile views by up to 21 times according to LinkedIn data. It's your 
+                chance to showcase your personal brand, expertise, and professional identity visually.
               </p>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Perfect LinkedIn Banner Size</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Perfect LinkedIn Banner Dimensions</h3>
               <div className="bg-blue-50 p-6 rounded-lg mb-6">
-                <p className="font-bold mb-2">Official Dimensions:</p>
                 <ul className="text-gray-700 space-y-2">
-                  <li><strong>Desktop:</strong> 1584 x 396 pixels</li>
-                  <li><strong>Mobile:</strong> 1128 x 191 pixels (visible area)</li>
-                  <li><strong>File Format:</strong> JPG or PNG</li>
-                  <li><strong>Max File Size:</strong> 8MB</li>
-                  <li><strong>Safe Zone:</strong> Keep important content in the center 1000x200px</li>
+                  <li><strong>Recommended Size</strong>: 1584 × 396 pixels</li>
+                  <li><strong>Minimum Size</strong>: 1128 × 191 pixels</li>
+                  <li><strong>Aspect Ratio</strong>: 4:1 (width to height)</li>
+                  <li><strong>File Size</strong>: Maximum 8MB</li>
+                  <li><strong>File Format</strong>: JPG, PNG, or GIF</li>
+                  <li><strong>Mobile Display</strong>: Center section is most visible on mobile (1350×220px safe zone)</li>
                 </ul>
               </div>
+              <p className="text-gray-700 mb-4">
+                <strong>Important:</strong> Your profile photo covers the bottom-left area of the banner. Design around 
+                this to ensure important elements aren't hidden.
+              </p>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">What to Include in Your LinkedIn Banner</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">What to Include in Your Banner</h3>
               
-              <h4 className="text-xl font-bold mt-6 mb-3">1. Your Value Proposition</h4>
-              <p className="text-gray-700 mb-4">
-                Communicate what you do and who you help in 5-7 words. Examples:
-                <br />• "Helping Startups Build Scalable Web Applications"
-                <br />• "Data Scientist | AI/ML Expert | Speaker"
-                <br />• "Marketing Strategist for B2B SaaS Companies"
-              </p>
+              <h4 className="text-xl font-bold mt-6 mb-3">Essential Elements</h4>
+              <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                <li><strong>Your Value Proposition</strong>: What you do and who you help</li>
+                <li><strong>Professional Title/Role</strong>: Your primary expertise</li>
+                <li><strong>Key Skills or Specializations</strong>: 3-5 main areas</li>
+                <li><strong>Contact Information</strong>: Email or website (optional)</li>
+                <li><strong>Industry-Relevant Visuals</strong>: Images that represent your work</li>
+                <li><strong>Brand Colors</strong>: Consistent with your personal brand</li>
+              </ul>
 
-              <h4 className="text-xl font-bold mt-6 mb-3">2. Professional Branding Elements</h4>
-              <p className="text-gray-700 mb-4">
-                Include your personal logo, company logo, or professional icons that represent your expertise. 
-                Use brand colors consistently across your profile.
-              </p>
-
-              <h4 className="text-xl font-bold mt-6 mb-3">3. Contact Information (Optional)</h4>
-              <p className="text-gray-700 mb-4">
-                Some professionals add email, website URL, or social media handles. Keep it subtle and professional.
-              </p>
-
-              <h4 className="text-xl font-bold mt-6 mb-3">4. Visual Interest</h4>
-              <p className="text-gray-700 mb-4">
-                Use relevant background images, patterns, or gradients that reflect your industry while keeping 
-                text readable.
-              </p>
-
-              <h3 className="text-2xl font-bold mt-8 mb-4">LinkedIn Banner Ideas by Profession</h3>
-              
-              <div className="space-y-4 mb-6">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">For Job Seekers:</h4>
-                  <p className="text-sm text-gray-700">
-                    "Actively Seeking [Job Title] Roles | [Key Skill 1] | [Key Skill 2] | [Key Skill 3]" with 
-                    professional color scheme
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">For Entrepreneurs:</h4>
-                  <p className="text-sm text-gray-700">
-                    "Founder of [Company Name] | Solving [Problem] for [Target Audience]" with company branding
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">For Consultants:</h4>
-                  <p className="text-sm text-gray-700">
-                    "[Industry] Consultant | Helping Companies [Benefit] | [Years]+ Years Experience" with 
-                    professional imagery
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">For Content Creators:</h4>
-                  <p className="text-sm text-gray-700">
-                    "Creating Content About [Topic] | [Follower Count]+ Followers | [Platform] Creator" with 
-                    vibrant design
-                  </p>
-                </div>
-              </div>
+              <h4 className="text-xl font-bold mt-6 mb-3">Optional Elements</h4>
+              <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                <li>Company logo (if prominently associated)</li>
+                <li>Certifications or credentials</li>
+                <li>Call-to-action ("Available for consulting")</li>
+                <li>Awards or achievements</li>
+                <li>Relevant statistics or metrics</li>
+              </ul>
 
               <h3 className="text-2xl font-bold mt-8 mb-4">Design Best Practices</h3>
               
-              <div className="bg-blue-50 p-6 rounded-lg mb-6">
-                <h4 className="font-bold mb-3 text-blue-800">Do's ✓</h4>
-                <ul className="text-gray-700 space-y-2 text-sm">
-                  <li>✓ Use high-resolution images (at least 1584x396)</li>
-                  <li>✓ Keep important elements in the safe zone</li>
-                  <li>✓ Use readable fonts (minimum 40px for key text)</li>
-                  <li>✓ Maintain brand consistency with profile photo</li>
-                  <li>✓ Test on both desktop and mobile</li>
-                  <li>✓ Use contrasting colors for text visibility</li>
-                  <li>✓ Keep it professional and industry-appropriate</li>
-                </ul>
+              <h4 className="text-xl font-bold mt-6 mb-3">1. Keep It Professional</h4>
+              <p className="text-gray-700 mb-4">
+                LinkedIn is a professional network. Avoid overly casual images, party photos, or anything controversial. 
+                Your banner should reflect the same professionalism as your resume.
+              </p>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">2. Use High-Quality Images</h4>
+              <p className="text-gray-700 mb-4">
+                Blurry or pixelated banners look unprofessional. Use high-resolution images (at least 1584×396px) and 
+                ensure they look sharp on both desktop and mobile devices.
+              </p>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">3. Maintain Brand Consistency</h4>
+              <p className="text-gray-700 mb-4">
+                Use colors, fonts, and design elements consistent with your personal brand. If you have a website or 
+                portfolio, your LinkedIn banner should complement that aesthetic.
+              </p>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">4. Consider the Profile Photo Overlap</h4>
+              <p className="text-gray-700 mb-4">
+                Your circular profile photo covers the bottom-left corner. Avoid placing important text or visuals in 
+                that area (approximately 300×300px from the bottom-left corner).
+              </p>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">5. Make It Readable</h4>
+              <p className="text-gray-700 mb-4">
+                If you include text, ensure it's large enough to read on mobile devices. Use contrasting colors for 
+                text and background. Avoid small fonts (minimum 40-50px for main text).
+              </p>
+
+              <h3 className="text-2xl font-bold mt-8 mb-4">Banner Ideas by Industry</h3>
+              
+              <div className="space-y-4 mb-6">
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h4 className="font-bold mb-2">Tech Professionals</h4>
+                  <p className="text-sm text-gray-700">
+                    Use code snippets, circuit boards, or abstract tech imagery. Include programming languages or 
+                    technologies you specialize in. Modern, clean designs work best.
+                  </p>
+                </div>
+
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-bold mb-2">Business & Finance</h4>
+                  <p className="text-sm text-gray-700">
+                    Professional cityscape, office environments, or abstract business graphics. Use blues, grays, and 
+                    gold for trustworthy, professional feel.
+                  </p>
+                </div>
+
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <h4 className="font-bold mb-2">Creative Professionals</h4>
+                  <p className="text-sm text-gray-700">
+                    Showcase your work! Use a collage of your designs, photography, or art. Colorful and unique designs 
+                    that reflect your creative style.
+                  </p>
+                </div>
+
+                <div className="bg-orange-50 p-4 rounded-lg">
+                  <h4 className="font-bold mb-2">Healthcare</h4>
+                  <p className="text-sm text-gray-700">
+                    Medical imagery (stethoscope, ECG lines), healthcare facilities, or abstract health symbols. 
+                    Use calming blues and greens.
+                  </p>
+                </div>
+
+                <div className="bg-pink-50 p-4 rounded-lg">
+                  <h4 className="font-bold mb-2">Educators & Coaches</h4>
+                  <p className="text-sm text-gray-700">
+                    Inspirational quotes, learning imagery, or classroom/training visuals. Show your teaching philosophy 
+                    or methodology.
+                  </p>
+                </div>
+
+                <div className="bg-yellow-50 p-4 rounded-lg">
+                  <h4 className="font-bold mb-2">Freelancers & Consultants</h4>
+                  <p className="text-sm text-gray-700">
+                    Highlight your services and availability. Include "Open for Projects" or "Available for Consulting" 
+                    with contact info.
+                  </p>
+                </div>
               </div>
 
-              <div className="bg-red-50 p-6 rounded-lg mb-6">
-                <h4 className="font-bold mb-3 text-red-800">Don'ts ✗</h4>
-                <ul className="text-gray-700 space-y-2 text-sm">
-                  <li>✗ Use low-quality or pixelated images</li>
-                  <li>✗ Overcrowd with too much text</li>
-                  <li>✗ Use overly casual or unprofessional images</li>
-                  <li>✗ Include outdated information</li>
-                  <li>✗ Use hard-to-read fonts or colors</li>
-                  <li>✗ Copy someone else's design exactly</li>
-                  <li>✗ Forget to update when changing roles</li>
-                </ul>
-              </div>
-
-              <h3 className="text-2xl font-bold mt-8 mb-4">Color Psychology for LinkedIn Banners</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Color Psychology for Banners</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li><strong>Blue</strong>: Trust, professionalism, corporate (most popular on LinkedIn)</li>
-                <li><strong>Navy</strong>: Authority, expertise, confidence</li>
-                <li><strong>Green</strong>: Growth, innovation, sustainability</li>
-                <li><strong>Purple</strong>: Creativity, wisdom, luxury</li>
-                <li><strong>Orange</strong>: Energy, enthusiasm, approachability</li>
-                <li><strong>Gray/Black</strong>: Sophistication, minimalism, modern</li>
+                <li><strong>Blue</strong>: Trust, professionalism, stability (most popular for corporate)</li>
+                <li><strong>Green</strong>: Growth, health, balance (great for sustainability, wellness)</li>
+                <li><strong>Purple</strong>: Creativity, wisdom, luxury (creative industries)</li>
+                <li><strong>Orange</strong>: Energy, enthusiasm, innovation (startups, tech)</li>
+                <li><strong>Black/Gray</strong>: Sophistication, elegance, authority (executive level)</li>
+                <li><strong>Red</strong>: Passion, energy, urgency (use sparingly)</li>
               </ul>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Typography Tips</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Common Mistakes to Avoid</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li>Limit to 2 fonts maximum (1 heading, 1 body)</li>
-                <li>Use sans-serif fonts for better readability</li>
-                <li>Recommended fonts: Montserrat, Roboto, Open Sans, Poppins</li>
-                <li>Main text should be 50-70px</li>
-                <li>Supporting text can be 30-40px</li>
-                <li>Ensure high contrast between text and background</li>
+                <li>Using low-resolution or stretched images</li>
+                <li>Including too much text (keep it concise)</li>
+                <li>Placing important elements in the bottom-left (profile photo area)</li>
+                <li>Using generic stock photos everyone else uses</li>
+                <li>Inconsistent branding across your profile</li>
+                <li>Outdated information (update regularly)</li>
+                <li>Unprofessional or overly casual imagery</li>
+                <li>Difficult-to-read fonts or color combinations</li>
               </ul>
-
-              <h3 className="text-2xl font-bold mt-8 mb-4">How to Upload Your LinkedIn Banner</h3>
-              <ol className="list-decimal pl-6 mb-6 text-gray-700 space-y-2">
-                <li>Go to your LinkedIn profile</li>
-                <li>Click the camera icon on your current banner</li>
-                <li>Click "Change photo"</li>
-                <li>Upload your banner image (JPG or PNG)</li>
-                <li>Adjust positioning if needed</li>
-                <li>Click "Apply" to save</li>
-                <li>Check appearance on desktop and mobile</li>
-              </ol>
 
               <h3 className="text-2xl font-bold mt-8 mb-4">When to Update Your Banner</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li>Starting a job search</li>
-                <li>Launching a new business or product</li>
-                <li>Changing careers or industries</li>
-                <li>After earning certifications or awards</li>
-                <li>For special campaigns or events</li>
-                <li>At least once every 6 months to stay fresh</li>
+                <li>When you change jobs or roles</li>
+                <li>When you rebrand your business</li>
+                <li>When launching a new service or product</li>
+                <li>Seasonally (showing you're active)</li>
+                <li>When your current banner looks outdated</li>
+                <li>When job searching (add "Open to Work" messaging)</li>
               </ul>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Banner Optimization Tips</h3>
-              <div className="bg-green-50 p-6 rounded-lg mb-6">
-                <ul className="text-gray-700 space-y-2 text-sm">
-                  <li>✓ A/B test different versions with colleagues</li>
-                  <li>✓ Include keywords relevant to your target audience</li>
-                  <li>✓ Align banner message with your headline</li>
-                  <li>✓ Use action-oriented language</li>
-                  <li>✓ Keep it updated with current role and achievements</li>
-                  <li>✓ Compress image file size for faster loading</li>
-                </ul>
-              </div>
+              <h3 className="text-2xl font-bold mt-8 mb-4">How to Upload Your Banner</h3>
+              <ol className="list-decimal pl-6 mb-6 text-gray-700 space-y-2">
+                <li>Go to your LinkedIn profile</li>
+                <li>Click the camera icon in the top-right of your banner area</li>
+                <li>Select "Upload photo"</li>
+                <li>Choose your image file (JPG or PNG)</li>
+                <li>Adjust positioning if needed</li>
+                <li>Click "Apply" to save</li>
+              </ol>
 
-              <div className="bg-gradient-to-r from-blue-700 to-indigo-700 text-white p-8 rounded-lg text-center mt-12">
+              <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-8 rounded-lg text-center mt-12">
                 <h3 className="text-2xl font-bold mb-4">Create Your LinkedIn Banner Now</h3>
-                <p className="mb-6">Make a powerful first impression on LinkedIn</p>
+                <p className="mb-6">Make a powerful first impression with a professional banner</p>
                 <Button size="lg" className="bg-white text-blue-700 hover:bg-gray-100">
-                  Design Your Banner →
+                  Start Designing →
                 </Button>
               </div>
             </article>
