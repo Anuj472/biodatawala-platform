@@ -1,8 +1,5 @@
 import { Metadata } from 'next';
-import Header from '@/components/common/Header';
-import TemplateEditor from '@/components/editor/TemplateEditor';
-import { allTemplates } from '@/lib/template-data';
-import { notFound } from 'next/navigation';
+import EditorLayout from '@/components/editor/EditorLayout';
 
 interface EditorPageProps {
   params: {
@@ -10,32 +7,11 @@ interface EditorPageProps {
   };
 }
 
-export async function generateMetadata({ params }: EditorPageProps): Promise<Metadata> {
-  const template = allTemplates.find(t => t.id === params.templateId);
-  
-  if (!template) {
-    return {
-      title: 'Template Not Found',
-    };
-  }
-
-  return {
-    title: `Edit ${template.name} | BioDatawala`,
-    description: `Customize and download ${template.name}. ${template.description}`,
-  };
-}
+export const metadata: Metadata = {
+  title: 'Template Editor - BioDatawala',
+  description: 'Customize your template with our easy-to-use online editor',
+};
 
 export default function EditorPage({ params }: EditorPageProps) {
-  const template = allTemplates.find(t => t.id === params.templateId);
-
-  if (!template) {
-    notFound();
-  }
-
-  return (
-    <>
-      <Header />
-      <TemplateEditor template={template} />
-    </>
-  );
+  return <EditorLayout templateId={params.templateId} />;
 }
