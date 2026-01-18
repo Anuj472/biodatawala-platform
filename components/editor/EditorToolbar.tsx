@@ -1,96 +1,85 @@
 'use client';
 
-import Button from '@/components/common/Button';
+import Button from '../common/Button';
 
 interface EditorToolbarProps {
-  onSave?: () => void;
-  onUndo?: () => void;
-  onRedo?: () => void;
-  onDownload?: () => void;
-  canUndo?: boolean;
-  canRedo?: boolean;
+  zoom: number;
+  onZoomIn: () => void;
+  onZoomOut: () => void;
+  onReset: () => void;
+  onSave: () => void;
+  onDownload: (format: 'pdf' | 'jpg' | 'png') => void;
 }
 
 export default function EditorToolbar({
+  zoom,
+  onZoomIn,
+  onZoomOut,
+  onReset,
   onSave,
-  onUndo,
-  onRedo,
   onDownload,
-  canUndo = false,
-  canRedo = false,
 }: EditorToolbarProps) {
   return (
-    <div className="bg-white border-b px-4 py-3 flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        {/* Undo/Redo */}
-        <button
-          onClick={onUndo}
-          disabled={!canUndo}
-          className="p-2 hover:bg-gray-100 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          title="Undo"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
-          </svg>
-        </button>
-        <button
-          onClick={onRedo}
-          disabled={!canRedo}
-          className="p-2 hover:bg-gray-100 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          title="Redo"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 10h-10a8 8 0 00-8 8v2M21 10l-6 6m6-6l-6-6" />
-          </svg>
-        </button>
-
-        <div className="w-px h-6 bg-gray-300 mx-2"></div>
-
-        {/* Text Tools */}
-        <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Bold">
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h5a4 4 0 001.855-7.53A3.5 3.5 0 0010 3H5zm5 5a1.5 1.5 0 100-3H6v3h4zm-4 2v4h5a2 2 0 100-4H6z" clipRule="evenodd" />
-          </svg>
-        </button>
-        <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Italic">
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 3.5a.5.5 0 01.5-.5h3a.5.5 0 010 1h-1.06l-2.4 8H11.5a.5.5 0 010 1h-3a.5.5 0 010-1h1.06l2.4-8H10.5a.5.5 0 01-.5-.5z"/>
-          </svg>
-        </button>
-        <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Underline">
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M3 19h14v-1H3v1zm7-18a4 4 0 00-4 4v6a4 4 0 008 0V5a4 4 0 00-4-4zM9 5a1 1 0 012 0v6a1 1 0 01-2 0V5z"/>
-          </svg>
-        </button>
-
-        <div className="w-px h-6 bg-gray-300 mx-2"></div>
-
-        {/* Alignment */}
-        <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Align Left">
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h8a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h8a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
-          </svg>
-        </button>
-        <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Align Center">
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm2 4a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm-2 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm2 4a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clipRule="evenodd" />
-          </svg>
-        </button>
-        <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Align Right">
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm4 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1zm-4 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm4 4a1 1 0 011-1h8a1 1 0 110 2H8a1 1 0 01-1-1z" clipRule="evenodd" />
-          </svg>
-        </button>
+    <div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
+      <div className="flex items-center gap-4">
+        <h2 className="text-lg font-semibold">Template Editor</h2>
       </div>
 
-      {/* Right Side Actions */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2">
+        {/* Zoom Controls */}
+        <div className="flex items-center gap-2 border-r pr-4">
+          <Button variant="ghost" size="sm" onClick={onZoomOut}>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+            </svg>
+          </Button>
+          <span className="text-sm font-medium min-w-[60px] text-center">{zoom}%</span>
+          <Button variant="ghost" size="sm" onClick={onZoomIn}>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+            </svg>
+          </Button>
+          <Button variant="ghost" size="sm" onClick={onReset}>
+            Reset
+          </Button>
+        </div>
+
+        {/* Action Buttons */}
         <Button variant="outline" size="sm" onClick={onSave}>
-          Save Draft
+          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+          </svg>
+          Save
         </Button>
-        <Button size="sm" onClick={onDownload}>
-          Download PDF
-        </Button>
+
+        <div className="relative group">
+          <Button size="sm">
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download
+          </Button>
+          <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
+            <button
+              onClick={() => onDownload('pdf')}
+              className="w-full text-left px-4 py-2 hover:bg-gray-50 first:rounded-t-lg"
+            >
+              Download as PDF
+            </button>
+            <button
+              onClick={() => onDownload('jpg')}
+              className="w-full text-left px-4 py-2 hover:bg-gray-50"
+            >
+              Download as JPG
+            </button>
+            <button
+              onClick={() => onDownload('png')}
+              className="w-full text-left px-4 py-2 hover:bg-gray-50 last:rounded-b-lg"
+            >
+              Download as PNG
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
