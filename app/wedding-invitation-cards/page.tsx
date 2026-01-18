@@ -6,9 +6,9 @@ import Button from '@/components/common/Button';
 import { weddingInvitationTemplates } from '@/lib/template-data';
 
 export const metadata: Metadata = {
-  title: 'Wedding Invitation Card Maker Online | Digital & Printable Designs - BioDatawala',
-  description: 'Create stunning wedding invitation cards online. Choose from royal, modern, floral designs. Free templates, instant download as PDF/JPG.',
-  keywords: 'wedding invitation card maker, digital wedding card, shaadi card design, online invitation creator, printable wedding cards',
+  title: 'Wedding Invitation Card Maker Online | Free Digital & Printable Cards - BioDatawala',
+  description: 'Create stunning wedding invitation cards online for free. Choose from traditional, modern, and royal designs. Download as PDF or share digitally.',
+  keywords: 'wedding invitation card maker, digital wedding card, shaadi card design, online invitation creator, free wedding templates',
 };
 
 export default function WeddingInvitationCards() {
@@ -17,22 +17,19 @@ export default function WeddingInvitationCards() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-pink-500 via-purple-500 to-pink-600 text-white py-16">
+        <section className="bg-gradient-to-r from-pink-600 to-rose-600 text-white py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Wedding Invitation Card Maker
               </h1>
               <p className="text-xl mb-6">
-                Create beautiful wedding invitations that wow your guests. From traditional to modern designs, 
-                customize everything and download instantly.
+                Design beautiful wedding invitations in minutes. From traditional Indian to modern elegant styles. 
+                Perfect for digital sharing or printing.
               </p>
-              <div className="flex gap-4">
-                <Button size="lg" className="bg-white text-pink-600 hover:bg-gray-100">Create Invitation Free</Button>
-                <Button variant="outline" size="lg" className="bg-white bg-opacity-20 border-white hover:bg-opacity-30">
-                  View Templates
-                </Button>
-              </div>
+              <Button size="lg" className="bg-white text-pink-600 hover:bg-gray-100">
+                Create Invitation Free
+              </Button>
             </div>
           </div>
         </section>
@@ -40,9 +37,9 @@ export default function WeddingInvitationCards() {
         {/* Template Gallery */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-4">Beautiful Wedding Invitation Templates</h2>
+            <h2 className="text-3xl font-bold text-center mb-4">Beautiful Wedding Card Templates</h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              From royal palace themes to modern minimalist designs - find the perfect invitation for your special day
+              Choose from royal palace, floral, modern, and traditional designs. All templates are customizable and free to use.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {weddingInvitationTemplates.map((template) => (
@@ -58,113 +55,146 @@ export default function WeddingInvitationCards() {
             <article className="prose prose-lg max-w-none">
               <h2 className="text-3xl font-bold mb-6">Complete Guide to Wedding Invitation Cards</h2>
               
-              <h3 className="text-2xl font-bold mt-8 mb-4">Types of Wedding Invitations</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Types of Wedding Invitation Cards</h3>
               
               <h4 className="text-xl font-bold mt-6 mb-3">1. Traditional Indian Wedding Cards</h4>
               <p className="text-gray-700 mb-4">
-                Traditional wedding invitations feature ornate designs, Ganesh motifs, religious symbols, and rich colors like 
-                maroon, gold, and red. Perfect for formal Hindu, Muslim, and Sikh weddings. Include ceremony details, 
-                venue information, and family names prominently.
+                Traditional Indian wedding cards feature rich colors, ornate borders, and religious symbols. Popular designs include 
+                Ganesh motifs, peacock patterns, and mandala art. Colors like maroon, gold, red, and royal blue are commonly used. 
+                These cards often include detailed ceremony schedules and family introductions.
               </p>
 
-              <h4 className="text-xl font-bold mt-6 mb-3">2. Modern & Minimalist Invitations</h4>
+              <h4 className="text-xl font-bold mt-6 mb-3">2. Royal Palace Theme</h4>
               <p className="text-gray-700 mb-4">
-                Clean lines, pastel colors, and contemporary typography define modern wedding invitations. Ideal for urban 
-                couples who prefer understated elegance. Features geometric patterns, watercolor effects, and simple layouts.
+                Inspired by palatial architecture, these cards feature luxurious gold foil effects, intricate borders, and regal designs. 
+                Perfect for grand weddings with a royal feel. Often includes elements like crowns, arches, and elegant calligraphy.
               </p>
 
-              <h4 className="text-xl font-bold mt-6 mb-3">3. Royal & Luxury Designs</h4>
+              <h4 className="text-xl font-bold mt-6 mb-3">3. Floral Garden Designs</h4>
               <p className="text-gray-700 mb-4">
-                Gold foil effects, intricate borders, palace-inspired graphics create luxurious wedding invitations. 
-                Perfect for grand celebrations. Include elaborate details, premium finishes, and sophisticated color palettes.
+                Romantic floral designs with watercolor flowers, botanical illustrations, and pastel color palettes. Ideal for outdoor 
+                garden weddings, spring celebrations, and couples who love nature-inspired aesthetics.
               </p>
 
-              <h4 className="text-xl font-bold mt-6 mb-3">4. Digital Wedding Invitations</h4>
+              <h4 className="text-xl font-bold mt-6 mb-3">4. Modern Minimalist Cards</h4>
               <p className="text-gray-700 mb-4">
-                Eco-friendly and cost-effective, digital invitations can be shared via WhatsApp, email, or social media. 
-                Include video elements, animations, and interactive RSVP features. Perfect for destination weddings.
+                Clean lines, geometric shapes, bold typography, and minimal embellishments. Perfect for contemporary couples who prefer 
+                sophistication and simplicity. Often uses black, white, gold, or soft pastels.
+              </p>
+
+              <h4 className="text-xl font-bold mt-6 mb-3">5. Digital Animated Invitations</h4>
+              <p className="text-gray-700 mb-4">
+                Video-based invitations with motion graphics, music, and animations. Eco-friendly and cost-effective. Easy to share via 
+                WhatsApp, email, or social media. Includes couple photos, ceremony details, and location maps.
               </p>
 
               <h3 className="text-2xl font-bold mt-8 mb-4">Essential Elements of Wedding Invitations</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
                 <li><strong>Couple's Names</strong>: Bride and groom names prominently displayed</li>
-                <li><strong>Date & Time</strong>: Wedding date, time of ceremonies</li>
-                <li><strong>Venue Details</strong>: Complete address with landmarks</li>
-                <li><strong>Family Names</strong>: Parents' names for traditional invites</li>
-                <li><strong>Ceremony Details</strong>: Mehendi, Sangeet, Wedding, Reception timings</li>
-                <li><strong>RSVP Information</strong>: Contact details for confirmation</li>
-                <li><strong>Dress Code</strong>: If applicable (optional)</li>
-                <li><strong>Map/Directions</strong>: For easy location (optional)</li>
+                <li><strong>Parents' Names</strong>: Including hosting parents' information</li>
+                <li><strong>Wedding Date & Time</strong>: Clear ceremony schedule</li>
+                <li><strong>Venue Details</strong>: Location with address and landmarks</li>
+                <li><strong>RSVP Information</strong>: Contact details for confirmations</li>
+                <li><strong>Dress Code</strong>: Optional attire suggestions</li>
+                <li><strong>Multiple Events</strong>: Mehendi, Sangeet, Haldi timings</li>
+                <li><strong>Map/Directions</strong>: QR code or location link</li>
               </ul>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Wedding Invitation Wording Examples</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Digital vs Traditional Wedding Cards</h3>
               
-              <div className="bg-pink-50 p-6 rounded-lg mb-6">
-                <h4 className="font-bold mb-3">Traditional Hindu Wedding</h4>
-                <p className="text-gray-700 italic">
-                  "With the blessings of Lord Ganesh and our families, we request the honor of your presence at the wedding 
-                  ceremony of [Bride Name] & [Groom Name]..."
-                </p>
-              </div>
-
               <div className="bg-blue-50 p-6 rounded-lg mb-6">
-                <h4 className="font-bold mb-3">Modern Wedding</h4>
-                <p className="text-gray-700 italic">
-                  "Two hearts, one love. [Bride] and [Groom] invite you to celebrate their wedding on [Date] at [Venue]..."
+                <h4 className="font-bold mb-3">Digital Wedding Invitations</h4>
+                <p className="text-gray-700 mb-2"><strong>Pros:</strong></p>
+                <ul className="list-disc pl-6 mb-3 text-gray-700 text-sm space-y-1">
+                  <li>Instant delivery via WhatsApp, email, social media</li>
+                  <li>Eco-friendly and sustainable</li>
+                  <li>Cost-effective - no printing or postage fees</li>
+                  <li>Easy to update details or resend</li>
+                  <li>Can include videos, music, and animations</li>
+                  <li>Track who has viewed the invitation</li>
+                </ul>
+                <p className="text-gray-700 mb-2"><strong>Cons:</strong></p>
+                <ul className="list-disc pl-6 text-gray-700 text-sm space-y-1">
+                  <li>Less formal than physical cards</li>
+                  <li>May not suit traditional ceremonies</li>
+                  <li>Requires guests to have smartphones</li>
+                </ul>
+              </div>
+
+              <div className="bg-pink-50 p-6 rounded-lg mb-6">
+                <h4 className="font-bold mb-3">Printed Wedding Cards</h4>
+                <p className="text-gray-700 mb-2"><strong>Pros:</strong></p>
+                <ul className="list-disc pl-6 mb-3 text-gray-700 text-sm space-y-1">
+                  <li>Tangible keepsake for guests</li>
+                  <li>Traditional and formal</li>
+                  <li>Premium feel with quality paper</li>
+                  <li>Can include embellishments (foil, embossing)</li>
+                  <li>Suitable for all age groups</li>
+                </ul>
+                <p className="text-gray-700 mb-2"><strong>Cons:</strong></p>
+                <ul className="list-disc pl-6 text-gray-700 text-sm space-y-1">
+                  <li>Higher cost for design, printing, delivery</li>
+                  <li>Takes time to print and distribute</li>
+                  <li>Difficult to make changes once printed</li>
+                  <li>Environmental impact</li>
+                </ul>
+              </div>
+
+              <h3 className="text-2xl font-bold mt-8 mb-4">Wedding Card Wording Examples</h3>
+              
+              <div className="bg-gray-100 p-6 rounded-lg mb-4">
+                <p className="font-bold mb-2">Traditional Hindu Wedding:</p>
+                <p className="text-gray-700 italic text-sm">
+                  "With the blessings of our families, we cordially invite you to the wedding ceremony of<br/>
+                  <strong>Priya</strong><br/>
+                  Daughter of Mr. & Mrs. Sharma<br/>
+                  with<br/>
+                  <strong>Rahul</strong><br/>
+                  Son of Mr. & Mrs. Verma<br/>
+                  On Sunday, March 15, 2026 at 7:00 PM<br/>
+                  Venue: Grand Palace Banquet Hall, Delhi"
                 </p>
               </div>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Digital vs Printed Invitations</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h4 className="text-lg font-bold mb-3 text-green-600">Digital Advantages</h4>
-                  <ul className="list-disc pl-6 text-gray-700 space-y-1 text-sm">
-                    <li>Instant delivery via WhatsApp/Email</li>
-                    <li>Cost-effective (no printing costs)</li>
-                    <li>Easy to track RSVPs</li>
-                    <li>Can include videos/animations</li>
-                    <li>Eco-friendly option</li>
-                    <li>Last-minute updates possible</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold mb-3 text-purple-600">Printed Advantages</h4>
-                  <ul className="list-disc pl-6 text-gray-700 space-y-1 text-sm">
-                    <li>Traditional and formal</li>
-                    <li>Physical keepsake</li>
-                    <li>Elegant presentation</li>
-                    <li>Suitable for all age groups</li>
-                    <li>No internet required</li>
-                    <li>Premium feel with textures</li>
-                  </ul>
-                </div>
+              <div className="bg-gray-100 p-6 rounded-lg mb-4">
+                <p className="font-bold mb-2">Modern Contemporary Style:</p>
+                <p className="text-gray-700 italic text-sm">
+                  "Together with their families<br/>
+                  <strong>Anjali & Rohan</strong><br/>
+                  invite you to celebrate their wedding<br/>
+                  Saturday, April 20, 2026<br/>
+                  6:00 PM onwards<br/>
+                  The Leela Palace, Bangalore"
+                </p>
               </div>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Design Tips for Perfect Invitations</h3>
-              <ol className="list-decimal pl-6 mb-6 text-gray-700 space-y-2">
-                <li><strong>Match Your Wedding Theme</strong>: Invitation should reflect overall wedding aesthetic</li>
-                <li><strong>Choose Readable Fonts</strong>: Decorative fonts for names, clear fonts for details</li>
-                <li><strong>Color Coordination</strong>: Use 2-3 complementary colors maximum</li>
-                <li><strong>Quality Images</strong>: Use high-resolution couple photos if including</li>
-                <li><strong>White Space</strong>: Don't overcrowd with information</li>
-                <li><strong>Proofread Multiple Times</strong>: Check dates, spellings, and venue details</li>
-                <li><strong>Test Print</strong>: Print one sample before bulk printing</li>
+              <h3 className="text-2xl font-bold mt-8 mb-4">How to Create Your Wedding Card</h3>
+              <ol className="list-decimal pl-6 mb-6 text-gray-700 space-y-3">
+                <li><strong>Choose Your Template</strong>: Browse our collection and select a design that matches your wedding theme</li>
+                <li><strong>Customize Details</strong>: Add names, dates, venue information, and personal message</li>
+                <li><strong>Upload Photos</strong>: Include engagement or couple photos (optional)</li>
+                <li><strong>Select Colors</strong>: Match your wedding color palette</li>
+                <li><strong>Preview</strong>: Review all details carefully</li>
+                <li><strong>Download</strong>: Save as PDF for printing or JPG for digital sharing</li>
               </ol>
 
-              <h3 className="text-2xl font-bold mt-8 mb-4">Timeline for Sending Invitations</h3>
+              <h3 className="text-2xl font-bold mt-8 mb-4">Tips for Perfect Wedding Invitations</h3>
               <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-                <li><strong>Save the Date</strong>: 6-8 months before wedding</li>
-                <li><strong>Main Invitations</strong>: 2-3 months before wedding</li>
-                <li><strong>Digital Reminders</strong>: 2 weeks before wedding</li>
-                <li><strong>Final Confirmations</strong>: 1 week before wedding</li>
+                <li>Send invitations 6-8 weeks before the wedding</li>
+                <li>Proofread all details multiple times</li>
+                <li>Include RSVP deadline (usually 2 weeks before wedding)</li>
+                <li>Provide clear directions or Google Maps link</li>
+                <li>Mention dress code if applicable</li>
+                <li>Include contact number for queries</li>
+                <li>Order extra printed cards for last-minute guests</li>
+                <li>Keep digital backup of the design</li>
               </ul>
 
-              <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-8 rounded-lg text-center mt-12">
-                <h3 className="text-2xl font-bold mb-4">Start Creating Your Perfect Invitation</h3>
-                <p className="mb-6">Choose from 10+ beautiful templates designed for Indian weddings</p>
+              <div className="bg-gradient-to-r from-pink-600 to-rose-600 text-white p-8 rounded-lg text-center mt-12">
+                <h3 className="text-2xl font-bold mb-4">Ready to Create Your Perfect Wedding Invitation?</h3>
+                <p className="mb-6">Design beautiful cards in minutes - No design skills needed!</p>
                 <Button size="lg" className="bg-white text-pink-600 hover:bg-gray-100">
-                  Browse Templates →
+                  Start Designing Now →
                 </Button>
               </div>
             </article>
