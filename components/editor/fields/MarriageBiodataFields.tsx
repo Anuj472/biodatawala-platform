@@ -41,7 +41,7 @@ export default function MarriageBiodataFields({ data, onChange }: FieldsProps) {
                 type="text"
                 value={data.height || ''}
                 onChange={(e) => onChange('height', e.target.value)}
-                placeholder="5'6\""
+                placeholder="5'6&quot;"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -129,7 +129,7 @@ export default function MarriageBiodataFields({ data, onChange }: FieldsProps) {
         
         <div className="space-y-3">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Father's Name</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Father&apos;s Name</label>
             <input
               type="text"
               value={data.fatherName || ''}
@@ -140,7 +140,7 @@ export default function MarriageBiodataFields({ data, onChange }: FieldsProps) {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Mother's Name</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Mother&apos;s Name</label>
             <input
               type="text"
               value={data.motherName || ''}
