@@ -15,7 +15,7 @@ export default function EditorToolbar({ onSave, onDownload, templateId, template
     <div className="bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between">
       {/* Left */}
       <div className="flex items-center gap-4">
-        <Link href="/dashboard" className="text-xl font-bold text-blue-600 hover:text-blue-700">
+        <Link href="/" className="text-xl font-bold text-blue-600 hover:text-blue-700">
           BioDatawala
         </Link>
         <span className="text-gray-400">|</span>
@@ -27,11 +27,15 @@ export default function EditorToolbar({ onSave, onDownload, templateId, template
 
       {/* Right */}
       <div className="flex items-center gap-3">
+        <div className="px-3 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-medium">
+          ✨ 100% Free - No Login Required
+        </div>
+        
         <button 
           onClick={onSave}
           className="text-sm text-gray-600 hover:text-gray-900 transition px-3 py-1.5 rounded hover:bg-gray-100"
         >
-          💾 Save Draft
+          💾 Save to Browser
         </button>
         
         <div className="relative group">
@@ -59,12 +63,6 @@ export default function EditorToolbar({ onSave, onDownload, templateId, template
             </button>
           </div>
         </div>
-        
-        <Link href="/pricing">
-          <Button variant="outline" size="sm">
-            ⭐ Upgrade
-          </Button>
-        </Link>
       </div>
     </div>
   );

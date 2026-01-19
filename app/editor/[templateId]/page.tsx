@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
-import { notFound, redirect } from 'next/navigation';
-import { auth } from '@/lib/auth';
+import { notFound } from 'next/navigation';
 import { allTemplates } from '@/lib/template-data';
 import EditorLayout from '@/components/editor/EditorLayout';
 
@@ -20,13 +19,6 @@ export async function generateMetadata({ params }: EditorPageProps): Promise<Met
 }
 
 export default async function EditorPage({ params }: EditorPageProps) {
-  // Check authentication
-  const session = await auth();
-  
-  if (!session?.user) {
-    redirect('/login');
-  }
-
   // Verify template exists
   const template = allTemplates.find((t) => t.id === params.templateId);
   
@@ -34,6 +26,7 @@ export default async function EditorPage({ params }: EditorPageProps) {
     notFound();
   }
 
+  // No authentication required - editor is free for everyone
   return <EditorLayout templateId={params.templateId} templateName={template.name} />;
 }
 
