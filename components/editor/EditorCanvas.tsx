@@ -1,84 +1,103 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import Button from '../common/Button';
+import { useState } from 'react'
+import MarriageBiodataTemplate from '../templates/MarriageBiodataTemplate'
+import ResumeTemplate from '../templates/ResumeTemplate'
+import BusinessCardTemplate from '../templates/BusinessCardTemplate'
+import CertificateTemplate from '../templates/CertificateTemplate'
+import IDCardTemplate from '../templates/IDCardTemplate'
+import WeddingInvitationTemplate from '../templates/WeddingInvitationTemplate'
 
 interface EditorCanvasProps {
-  templateId: string;
-  documentData: Record<string, any>;
+  templateId: string
+  documentData: Record<string, any>
 }
 
 export default function EditorCanvas({ templateId, documentData }: EditorCanvasProps) {
-  const [zoom, setZoom] = useState(100);
+  const [zoom, setZoom] = useState(75)
+
+  const handleZoomIn = () => setZoom(prev => Math.min(prev + 10, 200))
+  const handleZoomOut = () => setZoom(prev => Math.max(prev - 10, 25))
+  const handleZoomReset = () => setZoom(75)
+
+  // Determine which template component to render based on template ID
+  const renderTemplate = () => {
+    const props = { data: documentData, templateId }
+
+    if (templateId.startsWith('mb-')) {
+      return <MarriageBiodataTemplate {...props} />
+    } else if (templateId.startsWith('res-')) {
+      return <ResumeTemplate {...props} />
+    } else if (templateId.startsWith('wed-')) {
+      return <WeddingInvitationTemplate {...props} />
+    } else if (templateId.startsWith('bc-')) {
+      return <BusinessCardTemplate {...props} />
+    } else if (templateId.startsWith('cert-')) {
+      return <CertificateTemplate {...props} />
+    } else if (templateId.startsWith('id-')) {
+      return <IDCardTemplate {...props} />
+    }
+
+    // Fallback
+    return (
+      <div className="h-full flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="text-6xl mb-4">📝</div>
+          <h2 className="text-2xl font-bold text-gray-700 mb-2">Template Preview</h2>
+          <p className="text-gray-500">Template ID: {templateId}</p>
+          <p className="text-sm text-gray-400 mt-4">Start filling the form to see live preview</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
-    <div className="flex-1 bg-gray-100 p-8 overflow-auto">
+    <div className="flex-1 bg-gray-100 flex flex-col">
       {/* Toolbar */}
-      <div className="bg-white rounded-lg shadow-md p-4 mb-4 flex items-center justify-between">
-        <div className="flex items-center gap-4">
+      <div className="bg-white border-b border-gray-200 px-4 py-2 flex items-center justify-between">
+        <div className="flex items-center gap-2">
           <span className="text-sm text-gray-600">Zoom:</span>
-          <button 
-            onClick={() => setZoom(Math.max(25, zoom - 25))}
-            className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 font-bold"
+          <button
+            onClick={handleZoomOut}
+            className="w-8 h-8 rounded hover:bg-gray-100 transition flex items-center justify-center"
+            title="Zoom Out"
           >
             −
           </button>
-          <span className="text-sm font-medium min-w-[60px] text-center">{zoom}%</span>
-          <button 
-            onClick={() => setZoom(Math.min(200, zoom + 25))}
-            className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 font-bold"
+          <span className="text-sm font-medium w-12 text-center">{zoom}%</span>
+          <button
+            onClick={handleZoomIn}
+            className="w-8 h-8 rounded hover:bg-gray-100 transition flex items-center justify-center"
+            title="Zoom In"
           >
             +
           </button>
+          <button
+            onClick={handleZoomReset}
+            className="ml-2 px-3 py-1 text-sm bg-gray-100 rounded hover:bg-gray-200 transition"
+          >
+            Reset
+          </button>
         </div>
-        
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">📱 Mobile View</Button>
-          <Button variant="outline" size="sm">🖥️ Desktop View</Button>
+        <div className="text-sm text-gray-500">
+          💡 Tip: Changes update in real-time
         </div>
       </div>
 
-      {/* Canvas */}
-      <div className="flex items-center justify-center min-h-[800px]">
-        <div 
-          className="bg-white shadow-2xl transition-transform"
+      {/* Canvas Area */}
+      <div className="flex-1 overflow-auto p-8 flex items-center justify-center">
+        <div
+          className="bg-white shadow-2xl transition-transform duration-200"
           style={{
-            width: '210mm',
-            height: '297mm',
             transform: `scale(${zoom / 100})`,
-            transformOrigin: 'top center',
+            transformOrigin: 'center center',
+            width: '210mm', // A4 width
+            height: '297mm', // A4 height
           }}
         >
-          {/* Template Preview Area */}
-          <div className="w-full h-full p-12 border-2 border-gray-200">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold mb-4" style={{ color: documentData.primaryColor || '#1e40af' }}>
-                {documentData.name || 'Your Name Here'}
-              </h1>
-              <p className="text-lg text-gray-600">
-                {documentData.email || 'your.email@example.com'}
-              </p>
-              <p className="text-lg text-gray-600">
-                {documentData.phone || '+91 XXXXX XXXXX'}
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-lg p-6 mb-6">
-              <h2 className="text-2xl font-bold mb-3" style={{ color: documentData.primaryColor || '#1e40af' }}>
-                About
-              </h2>
-              <p className="text-gray-700 leading-relaxed" style={{ fontFamily: documentData.fontFamily || 'inherit' }}>
-                {documentData.description || 'Enter your description in the sidebar to see it appear here. This is a live preview of your template.'}
-              </p>
-            </div>
-
-            <div className="text-center text-gray-400 text-sm mt-8">
-              <p>Template ID: {templateId}</p>
-              <p className="mt-2">✨ Customize using the sidebar</p>
-            </div>
-          </div>
+          {renderTemplate()}
         </div>
       </div>
     </div>
-  );
+  )
 }
