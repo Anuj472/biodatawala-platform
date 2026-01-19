@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
-import Button from '../common/Button';
+import Link from 'next/link'
+import Button from '../common/Button'
 
 interface EditorToolbarProps {
-  onSave: () => void;
-  onDownload: (format: 'pdf' | 'jpg' | 'png') => void;
-  templateId: string;
-  templateName: string;
+  onSave: () => void
+  onDownload: (format: 'pdf' | 'jpg' | 'png') => void
+  templateId: string
+  templateName: string
 }
 
 export default function EditorToolbar({ onSave, onDownload, templateId, templateName }: EditorToolbarProps) {
@@ -27,10 +27,6 @@ export default function EditorToolbar({ onSave, onDownload, templateId, template
 
       {/* Right */}
       <div className="flex items-center gap-3">
-        <div className="px-3 py-1.5 bg-green-50 text-green-700 rounded-full text-sm font-medium">
-          ✨ 100% Free - No Login Required
-        </div>
-        
         <button 
           onClick={onSave}
           className="text-sm text-gray-600 hover:text-gray-900 transition px-3 py-1.5 rounded hover:bg-gray-100"
@@ -63,7 +59,13 @@ export default function EditorToolbar({ onSave, onDownload, templateId, template
             </button>
           </div>
         </div>
+        
+        <Link href="/">
+          <Button variant="outline" size="sm">
+            🏠 Home
+          </Button>
+        </Link>
       </div>
     </div>
-  );
+  )
 }

@@ -1,31 +1,31 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
+import { useState } from 'react'
 
 interface EditorSidebarProps {
-  onFieldChange: (field: string, value: any) => void;
-  documentData?: Record<string, any>;
+  onFieldChange: (field: string, value: any) => void
+  documentData?: Record<string, any>
 }
 
 export default function EditorSidebar({ onFieldChange, documentData = {} }: EditorSidebarProps) {
-  const [activeTab, setActiveTab] = useState<'content' | 'design' | 'photos'>('content');
+  const [activeTab, setActiveTab] = useState<'content' | 'design' | 'photos'>('content')
 
-  const colorOptions = [
+  const colors = [
     { name: 'Blue', value: '#1e40af' },
     { name: 'Purple', value: '#7c3aed' },
     { name: 'Green', value: '#059669' },
     { name: 'Red', value: '#dc2626' },
     { name: 'Orange', value: '#ea580c' },
     { name: 'Pink', value: '#db2777' },
-  ];
+  ]
 
-  const fontOptions = [
-    { name: 'Inter', value: 'Inter, sans-serif' },
-    { name: 'Roboto', value: 'Roboto, sans-serif' },
-    { name: 'Lato', value: 'Lato, sans-serif' },
-    { name: 'Open Sans', value: '"Open Sans", sans-serif' },
-    { name: 'Poppins', value: 'Poppins, sans-serif' },
-  ];
+  const fonts = [
+    'Inter',
+    'Roboto',
+    'Playfair Display',
+    'Montserrat',
+    'Lora',
+  ]
 
   return (
     <div className="w-80 bg-white border-r border-gray-200 flex flex-col">
@@ -33,7 +33,7 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
       <div className="flex border-b border-gray-200">
         <button
           onClick={() => setActiveTab('content')}
-          className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
+          className={`flex-1 px-4 py-3 text-sm font-medium transition ${
             activeTab === 'content'
               ? 'text-blue-600 border-b-2 border-blue-600'
               : 'text-gray-600 hover:text-gray-900'
@@ -43,7 +43,7 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
         </button>
         <button
           onClick={() => setActiveTab('design')}
-          className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
+          className={`flex-1 px-4 py-3 text-sm font-medium transition ${
             activeTab === 'design'
               ? 'text-blue-600 border-b-2 border-blue-600'
               : 'text-gray-600 hover:text-gray-900'
@@ -53,13 +53,13 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
         </button>
         <button
           onClick={() => setActiveTab('photos')}
-          className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
+          className={`flex-1 px-4 py-3 text-sm font-medium transition ${
             activeTab === 'photos'
               ? 'text-blue-600 border-b-2 border-blue-600'
               : 'text-gray-600 hover:text-gray-900'
           }`}
         >
-          📸 Photos
+          📷 Photos
         </button>
       </div>
 
@@ -68,20 +68,20 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
         {activeTab === 'content' && (
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
                 Full Name
               </label>
               <input
                 type="text"
                 value={documentData.name || ''}
                 onChange={(e) => onFieldChange('name', e.target.value)}
-                placeholder="Enter your full name"
+                placeholder="Enter your name"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
                 Email Address
               </label>
               <input
@@ -94,7 +94,7 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
                 Phone Number
               </label>
               <input
@@ -107,15 +107,15 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
                 Description
               </label>
               <textarea
                 value={documentData.description || ''}
                 onChange={(e) => onFieldChange('description', e.target.value)}
                 placeholder="Tell us about yourself..."
-                rows={6}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                rows={4}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
               />
             </div>
           </div>
@@ -127,23 +127,19 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
               <label className="block text-sm font-medium text-gray-700 mb-3">
                 Primary Color
               </label>
-              <div className="grid grid-cols-3 gap-3">
-                {colorOptions.map((color) => (
+              <div className="grid grid-cols-3 gap-2">
+                {colors.map((color) => (
                   <button
                     key={color.value}
                     onClick={() => onFieldChange('primaryColor', color.value)}
-                    className={`p-3 rounded-lg border-2 transition-all ${
+                    className={`h-12 rounded-lg border-2 transition ${
                       documentData.primaryColor === color.value
-                        ? 'border-gray-900 ring-2 ring-gray-900'
+                        ? 'border-gray-900 scale-105'
                         : 'border-gray-200 hover:border-gray-400'
                     }`}
-                  >
-                    <div
-                      className="w-full h-8 rounded"
-                      style={{ backgroundColor: color.value }}
-                    />
-                    <p className="text-xs text-center mt-1">{color.name}</p>
-                  </button>
+                    style={{ backgroundColor: color.value }}
+                    title={color.name}
+                  />
                 ))}
               </div>
             </div>
@@ -153,13 +149,13 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
                 Font Family
               </label>
               <select
-                value={documentData.fontFamily || fontOptions[0].value}
+                value={documentData.fontFamily || 'Inter'}
                 onChange={(e) => onFieldChange('fontFamily', e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
-                {fontOptions.map((font) => (
-                  <option key={font.value} value={font.value}>
-                    {font.name}
+                {fonts.map((font) => (
+                  <option key={font} value={font}>
+                    {font}
                   </option>
                 ))}
               </select>
@@ -167,7 +163,7 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Font Size
+                Font Size: {documentData.fontSize || 16}px
               </label>
               <input
                 type="range"
@@ -177,27 +173,31 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
                 onChange={(e) => onFieldChange('fontSize', parseInt(e.target.value))}
                 className="w-full"
               />
-              <p className="text-sm text-gray-600 text-center mt-1">
-                {documentData.fontSize || 16}px
-              </p>
             </div>
           </div>
         )}
 
         {activeTab === 'photos' && (
           <div className="space-y-4">
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
-              <div className="text-4xl mb-3">📸</div>
+            <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+              <div className="text-4xl mb-2">📸</div>
               <p className="text-sm text-gray-600 mb-3">
-                Photo upload feature coming soon!
+                Photo upload coming soon!
               </p>
-              <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm hover:bg-gray-200 transition">
-                Browse Files
-              </button>
+              <p className="text-xs text-gray-500">
+                For now, you can add photos using image editing software after downloading your template.
+              </p>
             </div>
           </div>
         )}
       </div>
+
+      {/* Info Banner */}
+      <div className="p-4 bg-blue-50 border-t border-blue-100">
+        <p className="text-xs text-blue-800">
+          💡 <strong>Free Forever!</strong> No login required. Your work is saved in your browser.
+        </p>
+      </div>
     </div>
-  );
+  )
 }

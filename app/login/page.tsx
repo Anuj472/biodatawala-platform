@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 
-// No login required - redirect directly to dashboard
+// Login is disabled - redirect to homepage
 export default function LoginPage() {
-  redirect('/dashboard')
+  redirect('/')
 }

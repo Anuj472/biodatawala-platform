@@ -1,51 +1,46 @@
-'use client';
+'use client'
 
-import { useState, useEffect } from 'react';
-import EditorSidebar from './EditorSidebar';
-import EditorCanvas from './EditorCanvas';
-import EditorToolbar from './EditorToolbar';
+import { useState, useEffect } from 'react'
+import EditorSidebar from './EditorSidebar'
+import EditorCanvas from './EditorCanvas'
+import EditorToolbar from './EditorToolbar'
 
 interface EditorLayoutProps {
-  templateId: string;
-  templateName: string;
+  templateId: string
+  templateName: string
 }
 
 export default function EditorLayout({ templateId, templateName }: EditorLayoutProps) {
-  const [documentData, setDocumentData] = useState<Record<string, any>>({});
+  const [documentData, setDocumentData] = useState<Record<string, any>>({})
 
   // Load saved data from localStorage on mount
   useEffect(() => {
-    const savedData = localStorage.getItem(`template_${templateId}`);
+    const savedData = localStorage.getItem(`template-${templateId}`)
     if (savedData) {
       try {
-        setDocumentData(JSON.parse(savedData));
+        setDocumentData(JSON.parse(savedData))
       } catch (e) {
-        console.error('Failed to load saved data:', e);
+        console.error('Failed to load saved data:', e)
       }
     }
-  }, [templateId]);
+  }, [templateId])
 
   const handleFieldChange = (field: string, value: any) => {
-    setDocumentData(prev => {
-      const newData = {
-        ...prev,
-        [field]: value,
-      };
-      // Auto-save to localStorage
-      localStorage.setItem(`template_${templateId}`, JSON.stringify(newData));
-      return newData;
-    });
-  };
+    setDocumentData(prev => ({
+      ...prev,
+      [field]: value,
+    }))
+  }
 
   const handleSave = () => {
-    localStorage.setItem(`template_${templateId}`, JSON.stringify(documentData));
-    alert('✅ Document saved to your browser! Your changes are safe.');
-  };
+    // Save to browser localStorage (no account needed)
+    localStorage.setItem(`template-${templateId}`, JSON.stringify(documentData))
+    alert('✅ Saved to your browser! Your work is safe even if you close the page.')
+  }
 
   const handleDownload = (format: 'pdf' | 'jpg' | 'png') => {
-    console.log('Downloading as:', format);
-    alert(`🚀 Download as ${format.toUpperCase()} feature coming soon!\n\nYour document will be downloaded in high quality ${format.toUpperCase()} format.`);
-  };
+    alert(`📥 Download as ${format.toUpperCase()} will be available soon!\n\nFor now, you can:\n- Take a screenshot (Print Screen)\n- Use browser's Print to PDF (Ctrl+P)\n- Right-click and Save Image`)
+  }
 
   return (
     <div className="h-screen flex flex-col">
@@ -61,5 +56,5 @@ export default function EditorLayout({ templateId, templateName }: EditorLayoutP
         <EditorCanvas templateId={templateId} documentData={documentData} />
       </div>
     </div>
-  );
+  )
 }
