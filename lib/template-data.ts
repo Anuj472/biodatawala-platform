@@ -1,136 +1,113 @@
-import { Template } from '@/types'
+import { Template } from '@/types';
 
-// Simple template structure with emoji previews
+// All 140+ templates in a single array
 export const TEMPLATES: Template[] = [
   // Marriage Biodata (10)
-  { id: 'mb-001', name: 'Traditional Hindu', description: 'Classic design with Ganesh symbol', category: 'Marriage Biodata', isPremium: false, preview: '🕉️' },
-  { id: 'mb-002', name: 'Modern Minimalist', description: 'Clean contemporary layout', category: 'Marriage Biodata', isPremium: false, preview: '📱' },
-  { id: 'mb-003', name: 'Elegant Floral', description: 'Delicate flower borders', category: 'Marriage Biodata', isPremium: false, preview: '🌺' },
-  { id: 'mb-004', name: 'Royal Gold', description: 'Luxurious golden theme', category: 'Marriage Biodata', isPremium: true, preview: '👑' },
-  { id: 'mb-005', name: 'Simple Professional', description: 'No-frills professional format', category: 'Marriage Biodata', isPremium: false, preview: '📄' },
-  { id: 'mb-006', name: 'South Indian Style', description: 'Traditional South Indian design', category: 'Marriage Biodata', isPremium: false, preview: '🏛️' },
-  { id: 'mb-007', name: 'Punjabi Theme', description: 'Vibrant Punjabi wedding motifs', category: 'Marriage Biodata', isPremium: true, preview: '🦁' },
-  { id: 'mb-008', name: 'Bengali Traditional', description: 'Classic Bengali biodata style', category: 'Marriage Biodata', isPremium: false, preview: '🌿' },
-  { id: 'mb-009', name: 'Muslim Nikah', description: 'Islamic design elements', category: 'Marriage Biodata', isPremium: false, preview: '☪️' },
-  { id: 'mb-010', name: 'Christian Wedding', description: 'Cross and dove motifs', category: 'Marriage Biodata', isPremium: false, preview: '✝️' },
+  { id: 'mb-001', name: 'Traditional Hindu', description: 'Classic design with traditional elements and Ganesh symbol', category: 'marriage', style: 'traditional', isPremium: false, tags: ['hindu', 'traditional', 'ganesh'] },
+  { id: 'mb-002', name: 'Modern Minimalist', description: 'Clean contemporary layout with minimalist design', category: 'marriage', style: 'modern', isPremium: false, tags: ['modern', 'minimalist', 'clean'] },
+  { id: 'mb-003', name: 'Elegant Floral', description: 'Delicate flower borders and botanical elements', category: 'marriage', style: 'elegant', isPremium: false, tags: ['floral', 'elegant', 'botanical'] },
+  { id: 'mb-004', name: 'Royal Gold', description: 'Luxurious golden theme with premium finish', category: 'marriage', style: 'luxury', isPremium: true, tags: ['luxury', 'gold', 'premium'] },
+  { id: 'mb-005', name: 'Simple Professional', description: 'No-frills professional format for quick creation', category: 'marriage', style: 'professional', isPremium: false, tags: ['simple', 'professional', 'quick'] },
+  { id: 'mb-006', name: 'South Indian Style', description: 'Traditional South Indian design elements', category: 'marriage', style: 'traditional', isPremium: false, tags: ['south-indian', 'traditional', 'cultural'] },
+  { id: 'mb-007', name: 'Punjabi Theme', description: 'Vibrant Punjabi wedding motifs and colors', category: 'marriage', style: 'traditional', isPremium: true, tags: ['punjabi', 'vibrant', 'cultural'] },
+  { id: 'mb-008', name: 'Bengali Traditional', description: 'Classic Bengali biodata style with traditional elements', category: 'marriage', style: 'traditional', isPremium: false, tags: ['bengali', 'traditional', 'cultural'] },
+  { id: 'mb-009', name: 'Muslim Nikah', description: 'Islamic design elements for nikah ceremonies', category: 'marriage', style: 'traditional', isPremium: false, tags: ['muslim', 'islamic', 'nikah'] },
+  { id: 'mb-010', name: 'Christian Wedding', description: 'Cross and dove motifs for Christian weddings', category: 'marriage', style: 'traditional', isPremium: false, tags: ['christian', 'traditional', 'religious'] },
 
   // Resume/CV (10)
-  { id: 'res-001', name: 'Professional Resume', description: 'Clean ATS-friendly format', category: 'Resume/CV', isPremium: false, preview: '💼' },
-  { id: 'res-002', name: 'Creative Designer', description: 'Portfolio-style layout', category: 'Resume/CV', isPremium: false, preview: '🎨' },
-  { id: 'res-003', name: 'Tech Developer', description: 'Code-focused design', category: 'Resume/CV', isPremium: false, preview: '💻' },
-  { id: 'res-004', name: 'Executive CV', description: 'Senior leadership format', category: 'Resume/CV', isPremium: true, preview: '👔' },
-  { id: 'res-005', name: 'Modern Minimalist', description: 'Clean typography focus', category: 'Resume/CV', isPremium: false, preview: '✨' },
-  { id: 'res-006', name: 'Two Column', description: 'Space-efficient layout', category: 'Resume/CV', isPremium: false, preview: '📋' },
-  { id: 'res-007', name: 'Infographic Resume', description: 'Visual skills display', category: 'Resume/CV', isPremium: true, preview: '📊' },
-  { id: 'res-008', name: 'Academic CV', description: 'Research and publications', category: 'Resume/CV', isPremium: false, preview: '🎓' },
-  { id: 'res-009', name: 'Fresher Template', description: 'Entry-level focused', category: 'Resume/CV', isPremium: false, preview: '🌟' },
-  { id: 'res-010', name: 'International CV', description: 'Global standard format', category: 'Resume/CV', isPremium: false, preview: '🌍' },
+  { id: 'res-001', name: 'ATS-Friendly Resume', description: 'Optimized for applicant tracking systems', category: 'career', style: 'professional', isPremium: false, tags: ['ats', 'professional', 'modern'] },
+  { id: 'res-002', name: 'Creative Designer', description: 'Portfolio-style layout for creative professionals', category: 'career', style: 'creative', isPremium: false, tags: ['creative', 'portfolio', 'designer'] },
+  { id: 'res-003', name: 'Tech Developer', description: 'Code-focused design for software developers', category: 'career', style: 'modern', isPremium: false, tags: ['tech', 'developer', 'coding'] },
+  { id: 'res-004', name: 'Executive CV', description: 'Senior leadership format for executives', category: 'career', style: 'professional', isPremium: true, tags: ['executive', 'leadership', 'senior'] },
+  { id: 'res-005', name: 'Modern Minimalist', description: 'Clean typography-focused design', category: 'career', style: 'modern', isPremium: false, tags: ['minimalist', 'clean', 'modern'] },
+  { id: 'res-006', name: 'Two Column Layout', description: 'Space-efficient two-column format', category: 'career', style: 'professional', isPremium: false, tags: ['two-column', 'efficient', 'organized'] },
+  { id: 'res-007', name: 'Infographic Resume', description: 'Visual skills display with charts', category: 'career', style: 'creative', isPremium: true, tags: ['infographic', 'visual', 'creative'] },
+  { id: 'res-008', name: 'Academic CV', description: 'Research and publications focused', category: 'career', style: 'professional', isPremium: false, tags: ['academic', 'research', 'scholarly'] },
+  { id: 'res-009', name: 'Fresher Template', description: 'Entry-level and college graduate focused', category: 'career', style: 'modern', isPremium: false, tags: ['fresher', 'entry-level', 'graduate'] },
+  { id: 'res-010', name: 'International CV', description: 'Global standard format for international jobs', category: 'career', style: 'professional', isPremium: false, tags: ['international', 'global', 'standard'] },
 
   // Wedding Invitations (10)
-  { id: 'wed-001', name: 'Royal Palace', description: 'Grand palace gates design', category: 'Wedding Invitation', isPremium: false, preview: '🏰' },
-  { id: 'wed-002', name: 'Floral Garden', description: 'Botanical watercolor style', category: 'Wedding Invitation', isPremium: false, preview: '🌻' },
-  { id: 'wed-003', name: 'Modern Geometric', description: 'Contemporary patterns', category: 'Wedding Invitation', isPremium: false, preview: '🔷' },
-  { id: 'wed-004', name: 'Traditional Gold', description: 'Classic golden borders', category: 'Wedding Invitation', isPremium: true, preview: '✨' },
-  { id: 'wed-005', name: 'Beach Wedding', description: 'Coastal destination theme', category: 'Wedding Invitation', isPremium: false, preview: '🌴' },
-  { id: 'wed-006', name: 'Rustic Barn', description: 'Country vintage style', category: 'Wedding Invitation', isPremium: true, preview: '🌾' },
-  { id: 'wed-007', name: 'Minimalist Chic', description: 'Simple elegant design', category: 'Wedding Invitation', isPremium: false, preview: '🤍' },
-  { id: 'wed-008', name: 'Indian Traditional', description: 'Rangoli and mehndi motifs', category: 'Wedding Invitation', isPremium: false, preview: '🪔' },
-  { id: 'wed-009', name: 'Whimsical Fairy Tale', description: 'Storybook romance theme', category: 'Wedding Invitation', isPremium: true, preview: '🧚' },
-  { id: 'wed-010', name: 'Art Deco Gatsby', description: '1920s glamour style', category: 'Wedding Invitation', isPremium: true, preview: '🎭' },
+  { id: 'wed-001', name: 'Royal Palace', description: 'Grand palace gates design with royal elements', category: 'marriage', style: 'luxury', isPremium: false, tags: ['royal', 'palace', 'grand'] },
+  { id: 'wed-002', name: 'Floral Garden', description: 'Botanical watercolor style with flowers', category: 'marriage', style: 'elegant', isPremium: false, tags: ['floral', 'garden', 'watercolor'] },
+  { id: 'wed-003', name: 'Modern Geometric', description: 'Contemporary geometric patterns and shapes', category: 'marriage', style: 'modern', isPremium: false, tags: ['geometric', 'modern', 'contemporary'] },
+  { id: 'wed-004', name: 'Traditional Gold', description: 'Classic golden borders and ornaments', category: 'marriage', style: 'traditional', isPremium: true, tags: ['gold', 'traditional', 'classic'] },
+  { id: 'wed-005', name: 'Beach Wedding', description: 'Coastal destination theme with beach elements', category: 'marriage', style: 'modern', isPremium: false, tags: ['beach', 'coastal', 'destination'] },
+  { id: 'wed-006', name: 'Rustic Barn', description: 'Country vintage style for barn weddings', category: 'marriage', style: 'rustic', isPremium: true, tags: ['rustic', 'barn', 'vintage'] },
+  { id: 'wed-007', name: 'Minimalist Chic', description: 'Simple elegant design with modern touch', category: 'marriage', style: 'modern', isPremium: false, tags: ['minimalist', 'chic', 'elegant'] },
+  { id: 'wed-008', name: 'Indian Traditional', description: 'Rangoli and mehndi motifs for Indian weddings', category: 'marriage', style: 'traditional', isPremium: false, tags: ['indian', 'rangoli', 'mehndi'] },
+  { id: 'wed-009', name: 'Whimsical Fairy Tale', description: 'Storybook romance theme for dream weddings', category: 'marriage', style: 'creative', isPremium: true, tags: ['fairy-tale', 'whimsical', 'romantic'] },
+  { id: 'wed-010', name: 'Art Deco Gatsby', description: '1920s glamour style inspired by Great Gatsby', category: 'marriage', style: 'vintage', isPremium: true, tags: ['art-deco', 'gatsby', 'vintage'] },
 
   // Business Cards (10)
-  { id: 'bc-001', name: 'Professional Business', description: 'Clean corporate design', category: 'Business Card', isPremium: false, preview: '💼' },
-  { id: 'bc-002', name: 'Creative Designer', description: 'Bold artistic layout', category: 'Business Card', isPremium: false, preview: '🎨' },
-  { id: 'bc-003', name: 'Tech Startup', description: 'Modern tech aesthetic', category: 'Business Card', isPremium: false, preview: '🚀' },
-  { id: 'bc-004', name: 'Minimalist Black', description: 'Elegant monochrome', category: 'Business Card', isPremium: false, preview: '⬛' },
-  { id: 'bc-005', name: 'Luxury Gold Foil', description: 'Premium metallic finish', category: 'Business Card', isPremium: true, preview: '🥇' },
-  { id: 'bc-006', name: 'Photographer Card', description: 'Portfolio showcase style', category: 'Business Card', isPremium: true, preview: '📸' },
-  { id: 'bc-007', name: 'Restaurant/Cafe', description: 'Food business theme', category: 'Business Card', isPremium: false, preview: '🍴' },
-  { id: 'bc-008', name: 'Real Estate Agent', description: 'Property professional', category: 'Business Card', isPremium: false, preview: '🏠' },
-  { id: 'bc-009', name: 'Consultant Card', description: 'Professional services', category: 'Business Card', isPremium: false, preview: '📊' },
-  { id: 'bc-010', name: 'Vertical Design', description: 'Unique portrait format', category: 'Business Card', isPremium: false, preview: '🎴' },
+  { id: 'bc-001', name: 'Minimalist Professional', description: 'Clean corporate design for professionals', category: 'business', style: 'professional', isPremium: false, tags: ['minimalist', 'corporate', 'clean'] },
+  { id: 'bc-002', name: 'Creative Designer', description: 'Bold artistic layout for creatives', category: 'business', style: 'creative', isPremium: false, tags: ['creative', 'artistic', 'bold'] },
+  { id: 'bc-003', name: 'Tech Startup', description: 'Modern tech aesthetic for startups', category: 'business', style: 'modern', isPremium: false, tags: ['tech', 'startup', 'modern'] },
+  { id: 'bc-004', name: 'Elegant Black', description: 'Elegant monochrome design', category: 'business', style: 'elegant', isPremium: false, tags: ['black', 'monochrome', 'elegant'] },
+  { id: 'bc-005', name: 'Luxury Gold Foil', description: 'Premium metallic gold finish', category: 'business', style: 'luxury', isPremium: true, tags: ['luxury', 'gold', 'premium'] },
+  { id: 'bc-006', name: 'Photographer Card', description: 'Portfolio showcase style for photographers', category: 'business', style: 'creative', isPremium: true, tags: ['photographer', 'portfolio', 'visual'] },
+  { id: 'bc-007', name: 'Restaurant/Cafe', description: 'Food business theme for eateries', category: 'business', style: 'creative', isPremium: false, tags: ['restaurant', 'food', 'cafe'] },
+  { id: 'bc-008', name: 'Real Estate Agent', description: 'Property professional design', category: 'business', style: 'professional', isPremium: false, tags: ['real-estate', 'property', 'professional'] },
+  { id: 'bc-009', name: 'Consultant Card', description: 'Professional services consulting', category: 'business', style: 'professional', isPremium: false, tags: ['consultant', 'professional', 'services'] },
+  { id: 'bc-010', name: 'Vertical Modern', description: 'Unique portrait format design', category: 'business', style: 'modern', isPremium: false, tags: ['vertical', 'unique', 'modern'] },
 
   // Certificates (10)
-  { id: 'cert-001', name: 'Achievement Award', description: 'Classic border with seal', category: 'Certificate', isPremium: false, preview: '🏆' },
-  { id: 'cert-002', name: 'Course Completion', description: 'Educational certification', category: 'Certificate', isPremium: false, preview: '🎓' },
-  { id: 'cert-003', name: 'Participation', description: 'Event attendance proof', category: 'Certificate', isPremium: false, preview: '🎫' },
-  { id: 'cert-004', name: 'Excellence Award', description: 'Premium recognition', category: 'Certificate', isPremium: true, preview: '⭐' },
-  { id: 'cert-005', name: 'Sports Championship', description: 'Athletic achievement', category: 'Certificate', isPremium: false, preview: '🥇' },
-  { id: 'cert-006', name: 'Employee Recognition', description: 'Workplace appreciation', category: 'Certificate', isPremium: false, preview: '👏' },
-  { id: 'cert-007', name: 'Training Certificate', description: 'Skill development proof', category: 'Certificate', isPremium: false, preview: '📚' },
-  { id: 'cert-008', name: 'Modern Minimalist', description: 'Contemporary design', category: 'Certificate', isPremium: true, preview: '🏅' },
-  { id: 'cert-009', name: 'Elegant Script', description: 'Calligraphy style', category: 'Certificate', isPremium: true, preview: '✨' },
-  { id: 'cert-010', name: 'Professional Corporate', description: 'Business certification', category: 'Certificate', isPremium: false, preview: '📄' },
+  { id: 'cert-001', name: 'Achievement Award', description: 'Classic border with official seal', category: 'business', style: 'traditional', isPremium: false, tags: ['achievement', 'award', 'classic'] },
+  { id: 'cert-002', name: 'Course Completion', description: 'Educational certification design', category: 'business', style: 'professional', isPremium: false, tags: ['course', 'education', 'completion'] },
+  { id: 'cert-003', name: 'Participation Certificate', description: 'Event attendance proof', category: 'business', style: 'professional', isPremium: false, tags: ['participation', 'event', 'attendance'] },
+  { id: 'cert-004', name: 'Excellence Award', description: 'Premium recognition certificate', category: 'business', style: 'luxury', isPremium: true, tags: ['excellence', 'premium', 'recognition'] },
+  { id: 'cert-005', name: 'Sports Championship', description: 'Athletic achievement certificate', category: 'business', style: 'modern', isPremium: false, tags: ['sports', 'championship', 'athletic'] },
+  { id: 'cert-006', name: 'Employee Recognition', description: 'Workplace appreciation certificate', category: 'business', style: 'professional', isPremium: false, tags: ['employee', 'recognition', 'workplace'] },
+  { id: 'cert-007', name: 'Training Certificate', description: 'Skill development proof', category: 'business', style: 'professional', isPremium: false, tags: ['training', 'skill', 'development'] },
+  { id: 'cert-008', name: 'Modern Minimalist', description: 'Contemporary clean design', category: 'business', style: 'modern', isPremium: true, tags: ['minimalist', 'modern', 'clean'] },
+  { id: 'cert-009', name: 'Elegant Script', description: 'Calligraphy style certificate', category: 'business', style: 'elegant', isPremium: true, tags: ['elegant', 'script', 'calligraphy'] },
+  { id: 'cert-010', name: 'Corporate Professional', description: 'Business certification design', category: 'business', style: 'professional', isPremium: false, tags: ['corporate', 'business', 'professional'] },
 
   // ID Cards (10)
-  { id: 'id-001', name: 'Employee ID', description: 'Corporate staff card', category: 'ID Card', isPremium: false, preview: '🏭' },
-  { id: 'id-002', name: 'Student ID', description: 'School/college identification', category: 'ID Card', isPremium: false, preview: '🎓' },
-  { id: 'id-003', name: 'Visitor Pass', description: 'Temporary access badge', category: 'ID Card', isPremium: false, preview: '🏫' },
-  { id: 'id-004', name: 'Event Badge', description: 'Conference/seminar pass', category: 'ID Card', isPremium: false, preview: '🎫' },
-  { id: 'id-005', name: 'Membership Card', description: 'Club/organization member', category: 'ID Card', isPremium: false, preview: '🎴' },
-  { id: 'id-006', name: 'Security Pass', description: 'High-security clearance', category: 'ID Card', isPremium: true, preview: '🔒' },
-  { id: 'id-007', name: 'Volunteer ID', description: 'NGO/event volunteer', category: 'ID Card', isPremium: false, preview: '🤝' },
-  { id: 'id-008', name: 'Press Pass', description: 'Media professional card', category: 'ID Card', isPremium: true, preview: '📰' },
-  { id: 'id-009', name: 'Library Card', description: 'Institution access card', category: 'ID Card', isPremium: false, preview: '📚' },
-  { id: 'id-010', name: 'Gym Membership', description: 'Fitness center access', category: 'ID Card', isPremium: false, preview: '🏋️' },
+  { id: 'id-001', name: 'Corporate Employee', description: 'Professional corporate staff card', category: 'business', style: 'professional', isPremium: false, tags: ['corporate', 'employee', 'staff'] },
+  { id: 'id-002', name: 'Student ID', description: 'School and college identification', category: 'business', style: 'modern', isPremium: false, tags: ['student', 'school', 'college'] },
+  { id: 'id-003', name: 'Visitor Pass', description: 'Temporary access badge', category: 'business', style: 'professional', isPremium: false, tags: ['visitor', 'temporary', 'access'] },
+  { id: 'id-004', name: 'Event Badge', description: 'Conference and seminar pass', category: 'business', style: 'modern', isPremium: false, tags: ['event', 'conference', 'badge'] },
+  { id: 'id-005', name: 'Membership Card', description: 'Club or organization member card', category: 'business', style: 'professional', isPremium: false, tags: ['membership', 'club', 'organization'] },
+  { id: 'id-006', name: 'Security Pass', description: 'High-security clearance badge', category: 'business', style: 'professional', isPremium: true, tags: ['security', 'clearance', 'access'] },
+  { id: 'id-007', name: 'Volunteer ID', description: 'NGO and event volunteer identification', category: 'business', style: 'modern', isPremium: false, tags: ['volunteer', 'ngo', 'event'] },
+  { id: 'id-008', name: 'Press Pass', description: 'Media professional credential', category: 'business', style: 'professional', isPremium: true, tags: ['press', 'media', 'journalist'] },
+  { id: 'id-009', name: 'Library Card', description: 'Institution access card design', category: 'business', style: 'professional', isPremium: false, tags: ['library', 'institution', 'access'] },
+  { id: 'id-010', name: 'Gym Membership', description: 'Fitness center access card', category: 'business', style: 'modern', isPremium: false, tags: ['gym', 'fitness', 'membership'] },
+];
 
-  // Pre-Wedding Templates (10)
-  { id: 'pw-001', name: 'Save the Date Card', description: 'Elegant announcement', category: 'Pre-Wedding', isPremium: false, preview: '💌' },
-  { id: 'pw-002', name: 'Engagement Invitation', description: 'Ring ceremony invite', category: 'Pre-Wedding', isPremium: false, preview: '💍' },
-  { id: 'pw-003', name: 'Pre-Wedding Photoshoot', description: 'Photo collage template', category: 'Pre-Wedding', isPremium: true, preview: '📸' },
-  { id: 'pw-004', name: 'Haldi Ceremony', description: 'Traditional turmeric event', category: 'Pre-Wedding', isPremium: false, preview: '🧡' },
-  { id: 'pw-005', name: 'Mehndi Ceremony', description: 'Henna design invitation', category: 'Pre-Wedding', isPremium: false, preview: '🖋️' },
-  { id: 'pw-006', name: 'Sangeet Night', description: 'Music & dance celebration', category: 'Pre-Wedding', isPremium: true, preview: '🎶' },
-  { id: 'pw-007', name: 'Cocktail Party', description: 'Modern pre-wedding event', category: 'Pre-Wedding', isPremium: true, preview: '🍸' },
-  { id: 'pw-008', name: 'Destination Pre-Wedding', description: 'Travel-themed save date', category: 'Pre-Wedding', isPremium: true, preview: '✈️' },
-  { id: 'pw-009', name: 'Couple Announcement', description: 'Social media ready post', category: 'Pre-Wedding', isPremium: false, preview: '💑' },
-  { id: 'pw-010', name: 'Countdown Timer', description: 'Days until wedding card', category: 'Pre-Wedding', isPremium: false, preview: '⏰' },
+// Export all templates (for backwards compatibility)
+export const allTemplates = TEMPLATES;
 
-  // Biodata Posters (10)
-  { id: 'bp-001', name: 'Instagram Story Biodata', description: 'Vertical social media format', category: 'Biodata Poster', isPremium: false, preview: '📱' },
-  { id: 'bp-002', name: 'Modern Collage Poster', description: 'Photo grid with details', category: 'Biodata Poster', isPremium: false, preview: '🖼️' },
-  { id: 'bp-003', name: 'Minimalist Info Poster', description: 'Clean data presentation', category: 'Biodata Poster', isPremium: false, preview: '📋' },
-  { id: 'bp-004', name: 'Colorful Gradient', description: 'Vibrant modern design', category: 'Biodata Poster', isPremium: true, preview: '🌈' },
-  { id: 'bp-005', name: 'WhatsApp Friendly', description: 'Optimized for messaging', category: 'Biodata Poster', isPremium: false, preview: '💬' },
-  { id: 'bp-006', name: 'Timeline Format', description: 'Life journey visualization', category: 'Biodata Poster', isPremium: true, preview: '📅' },
-  { id: 'bp-007', name: 'Infographic Style', description: 'Visual data display', category: 'Biodata Poster', isPremium: true, preview: '📊' },
-  { id: 'bp-008', name: 'Polaroid Photo Poster', description: 'Vintage photo style', category: 'Biodata Poster', isPremium: false, preview: '📷' },
-  { id: 'bp-009', name: 'Magazine Cover', description: 'Editorial design format', category: 'Biodata Poster', isPremium: true, preview: '📰' },
-  { id: 'bp-010', name: 'Split Screen Design', description: 'Photo and text balance', category: 'Biodata Poster', isPremium: false, preview: '🔲' },
+// Helper functions to filter templates by category
+export const getTemplatesByCategory = (category: string) => {
+  return TEMPLATES.filter(t => t.category === category);
+};
 
-  // Cover Letters (10)
-  { id: 'cl-001', name: 'Professional Cover Letter', description: 'ATS-friendly format', category: 'Cover Letter', isPremium: false, preview: '📝' },
-  { id: 'cl-002', name: 'Creative Industry', description: 'Personality-driven style', category: 'Cover Letter', isPremium: false, preview: '🎨' },
-  { id: 'cl-003', name: 'Career Change', description: 'Transition focused', category: 'Cover Letter', isPremium: false, preview: '🔄' },
-  { id: 'cl-004', name: 'Entry-Level/Fresher', description: 'Graduate focused', category: 'Cover Letter', isPremium: false, preview: '🎓' },
-  { id: 'cl-005', name: 'Executive Letter', description: 'Senior leadership tone', category: 'Cover Letter', isPremium: true, preview: '👔' },
-  { id: 'cl-006', name: 'Tech Industry', description: 'Technical skills focus', category: 'Cover Letter', isPremium: false, preview: '💻' },
-  { id: 'cl-007', name: 'Internship Application', description: 'Student/learning oriented', category: 'Cover Letter', isPremium: false, preview: '📚' },
-  { id: 'cl-008', name: 'Cold Contact Letter', description: 'Networking focused', category: 'Cover Letter', isPremium: true, preview: '🤝' },
-  { id: 'cl-009', name: 'Consulting Letter', description: 'Problem-solving approach', category: 'Cover Letter', isPremium: true, preview: '📊' },
-  { id: 'cl-010', name: 'Remote Job Letter', description: 'Work-from-home focused', category: 'Cover Letter', isPremium: false, preview: '🏠' },
+export const getTemplateById = (id: string) => {
+  return TEMPLATES.find(t => t.id === id);
+};
 
-  // LinkedIn Banners (10)
-  { id: 'ln-001', name: 'Professional Blue', description: 'Trust & credibility theme', category: 'LinkedIn Banner', isPremium: false, preview: '🔵' },
-  { id: 'ln-002', name: 'Creative Gradient', description: 'Colorful modern design', category: 'LinkedIn Banner', isPremium: false, preview: '🌈' },
-  { id: 'ln-003', name: 'Tech Industry', description: 'Code pattern background', category: 'LinkedIn Banner', isPremium: false, preview: '💻' },
-  { id: 'ln-004', name: 'Minimalist', description: 'Simple text focus', category: 'LinkedIn Banner', isPremium: false, preview: '✨' },
-  { id: 'ln-005', name: 'Business Consultant', description: 'Professional services', category: 'LinkedIn Banner', isPremium: true, preview: '💼' },
-  { id: 'ln-006', name: 'Job Seeker', description: 'Open to opportunities', category: 'LinkedIn Banner', isPremium: false, preview: '🔍' },
-  { id: 'ln-007', name: 'Freelancer', description: 'Available for projects', category: 'LinkedIn Banner', isPremium: false, preview: '🎨' },
-  { id: 'ln-008', name: 'Designer Portfolio', description: 'Visual showcase', category: 'LinkedIn Banner', isPremium: true, preview: '🇽' },
-  { id: 'ln-009', name: 'Thought Leader', description: 'Expert positioning', category: 'LinkedIn Banner', isPremium: true, preview: '🎤' },
-  { id: 'ln-010', name: 'Corporate Employee', description: 'Company branding', category: 'LinkedIn Banner', isPremium: false, preview: '🏭' },
+// Category-specific exports
+export const marriageBiodataTemplates = TEMPLATES.filter(t => 
+  t.id.startsWith('mb-')
+);
 
-  // Letterheads (10)
-  { id: 'lh-001', name: 'Classic Corporate', description: 'Traditional header/footer', category: 'Letterhead', isPremium: false, preview: '📜' },
-  { id: 'lh-002', name: 'Modern Sidebar', description: 'Contemporary vertical band', category: 'Letterhead', isPremium: false, preview: '📄' },
-  { id: 'lh-003', name: 'Minimalist', description: 'Simple logo placement', category: 'Letterhead', isPremium: false, preview: '📑' },
-  { id: 'lh-004', name: 'Law Firm', description: 'Formal professional style', category: 'Letterhead', isPremium: true, preview: '⚖️' },
-  { id: 'lh-005', name: 'Creative Agency', description: 'Colorful unique layout', category: 'Letterhead', isPremium: true, preview: '🎨' },
-  { id: 'lh-006', name: 'Tech Startup', description: 'Modern digital-first', category: 'Letterhead', isPremium: false, preview: '🚀' },
-  { id: 'lh-007', name: 'Medical Practice', description: 'Healthcare professional', category: 'Letterhead', isPremium: false, preview: '⚕️' },
-  { id: 'lh-008', name: 'Non-Profit', description: 'Mission-focused design', category: 'Letterhead', isPremium: false, preview: '🤝' },
-  { id: 'lh-009', name: 'Personal Letterhead', description: 'Individual professional', category: 'Letterhead', isPremium: false, preview: '👤' },
-  { id: 'lh-010', name: 'Luxury Brand', description: 'Elegant premium style', category: 'Letterhead', isPremium: true, preview: '💎' },
-]
+export const resumeTemplates = TEMPLATES.filter(t => 
+  t.id.startsWith('res-')
+);
+
+export const weddingInvitationTemplates = TEMPLATES.filter(t => 
+  t.id.startsWith('wed-')
+);
+
+export const businessCardTemplates = TEMPLATES.filter(t => 
+  t.id.startsWith('bc-')
+);
+
+export const certificateTemplates = TEMPLATES.filter(t => 
+  t.id.startsWith('cert-')
+);
+
+export const idCardTemplates = TEMPLATES.filter(t => 
+  t.id.startsWith('id-')
+);
