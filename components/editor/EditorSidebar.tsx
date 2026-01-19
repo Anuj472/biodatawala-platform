@@ -1,14 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { getFieldsByTemplateId, TemplateFieldGroup } from '@/lib/template-fields'
 
 interface EditorSidebarProps {
   onFieldChange: (field: string, value: any) => void
   documentData?: Record<string, any>
+  templateId: string
 }
 
-export default function EditorSidebar({ onFieldChange, documentData = {} }: EditorSidebarProps) {
-  const [activeTab, setActiveTab] = useState<'content' | 'design' | 'photos'>('content')
+export default function EditorSidebar({ onFieldChange, documentData = {}, templateId }: EditorSidebarProps) {
+  const [activeTab, setActiveTab] = useState<'content' | 'design'>('content')
+  const [fieldGroups, setFieldGroups] = useState<TemplateFieldGroup[]>([])
+
+  useEffect(() => {
+    const fields = getFieldsByTemplateId(templateId)
+    setFieldGroups(fields)
+  }, [templateId])
 
   const colors = [
     { name: 'Blue', value: '#1e40af' },
@@ -51,73 +59,66 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
         >
           🎨 Design
         </button>
-        <button
-          onClick={() => setActiveTab('photos')}
-          className={`flex-1 px-4 py-3 text-sm font-medium transition ${
-            activeTab === 'photos'
-              ? 'text-blue-600 border-b-2 border-blue-600'
-              : 'text-gray-600 hover:text-gray-900'
-          }`}
-        >
-          📷 Photos
-        </button>
       </div>
 
       {/* Content */}
       <div className="flex-1 overflow-y-auto p-6">
         {activeTab === 'content' && (
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Full Name
-              </label>
-              <input
-                type="text"
-                value={documentData.name || ''}
-                onChange={(e) => onFieldChange('name', e.target.value)}
-                placeholder="Enter your name"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Email Address
-              </label>
-              <input
-                type="email"
-                value={documentData.email || ''}
-                onChange={(e) => onFieldChange('email', e.target.value)}
-                placeholder="your.email@example.com"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                value={documentData.phone || ''}
-                onChange={(e) => onFieldChange('phone', e.target.value)}
-                placeholder="+91 XXXXX XXXXX"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Description
-              </label>
-              <textarea
-                value={documentData.description || ''}
-                onChange={(e) => onFieldChange('description', e.target.value)}
-                placeholder="Tell us about yourself..."
-                rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-              />
-            </div>
+          <div className="space-y-6">
+            {fieldGroups.map((group, groupIndex) => (
+              <div key={groupIndex} className="space-y-4">
+                <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wide">
+                  {group.title}
+                </h3>
+                {group.fields.map((field) => (
+                  <div key={field.id}>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      {field.label}
+                      {field.required && <span className="text-red-500 ml-1">*</span>}
+                    </label>
+                    
+                    {field.type === 'textarea' ? (
+                      <textarea
+                        value={documentData[field.id] || ''}
+                        onChange={(e) => onFieldChange(field.id, e.target.value)}
+                        placeholder={field.placeholder}
+                        maxLength={field.maxLength}
+                        rows={3}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm resize-none"
+                      />
+                    ) : field.type === 'select' ? (
+                      <select
+                        value={documentData[field.id] || ''}
+                        onChange={(e) => onFieldChange(field.id, e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                      >
+                        <option value="">Select {field.label}</option>
+                        {field.options?.map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        type={field.type}
+                        value={documentData[field.id] || ''}
+                        onChange={(e) => onFieldChange(field.id, e.target.value)}
+                        placeholder={field.placeholder}
+                        maxLength={field.maxLength}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                      />
+                    )}
+                    
+                    {field.maxLength && (
+                      <p className="text-xs text-gray-500 mt-1">
+                        {(documentData[field.id] || '').length} / {field.maxLength}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         )}
 
@@ -173,20 +174,6 @@ export default function EditorSidebar({ onFieldChange, documentData = {} }: Edit
                 onChange={(e) => onFieldChange('fontSize', parseInt(e.target.value))}
                 className="w-full"
               />
-            </div>
-          </div>
-        )}
-
-        {activeTab === 'photos' && (
-          <div className="space-y-4">
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
-              <div className="text-4xl mb-2">📸</div>
-              <p className="text-sm text-gray-600 mb-3">
-                Photo upload coming soon!
-              </p>
-              <p className="text-xs text-gray-500">
-                For now, you can add photos using image editing software after downloading your template.
-              </p>
             </div>
           </div>
         )}

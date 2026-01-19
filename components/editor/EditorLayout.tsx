@@ -11,7 +11,11 @@ interface EditorLayoutProps {
 }
 
 export default function EditorLayout({ templateId, templateName }: EditorLayoutProps) {
-  const [documentData, setDocumentData] = useState<Record<string, any>>({})
+  const [documentData, setDocumentData] = useState<Record<string, any>>({
+    primaryColor: '#1e40af',
+    fontFamily: 'Inter',
+    fontSize: 16,
+  })
 
   // Load saved data from localStorage on mount
   useEffect(() => {
@@ -39,7 +43,7 @@ export default function EditorLayout({ templateId, templateName }: EditorLayoutP
   }
 
   const handleDownload = (format: 'pdf' | 'jpg' | 'png') => {
-    alert(`📥 Download as ${format.toUpperCase()} will be available soon!\n\nFor now, you can:\n- Take a screenshot (Print Screen)\n- Use browser's Print to PDF (Ctrl+P)\n- Right-click and Save Image`)
+    alert(`📥 Download as ${format.toUpperCase()} will be available soon!\n\nFor now, you can:\n- Take a screenshot (Print Screen)\n- Use browser's Print to PDF (Ctrl+P)\n- Right-click on canvas and Save Image`)
   }
 
   return (
@@ -52,7 +56,11 @@ export default function EditorLayout({ templateId, templateName }: EditorLayoutP
       />
       
       <div className="flex-1 flex overflow-hidden">
-        <EditorSidebar onFieldChange={handleFieldChange} documentData={documentData} />
+        <EditorSidebar 
+          onFieldChange={handleFieldChange} 
+          documentData={documentData}
+          templateId={templateId}
+        />
         <EditorCanvas templateId={templateId} documentData={documentData} />
       </div>
     </div>
