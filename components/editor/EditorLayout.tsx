@@ -7,10 +7,11 @@ import EditorToolbar from './EditorToolbar';
 
 interface EditorLayoutProps {
   templateId: string;
+  templateName: string;
 }
 
-export default function EditorLayout({ templateId }: EditorLayoutProps) {
-  const [documentData, setDocumentData] = useState({});
+export default function EditorLayout({ templateId, templateName }: EditorLayoutProps) {
+  const [documentData, setDocumentData] = useState<Record<string, any>>({});
 
   const handleFieldChange = (field: string, value: any) => {
     setDocumentData(prev => ({
@@ -21,12 +22,12 @@ export default function EditorLayout({ templateId }: EditorLayoutProps) {
 
   const handleSave = () => {
     console.log('Saving document:', documentData);
-    // TODO: Implement save functionality
+    alert('Document saved! (Database integration coming soon)');
   };
 
   const handleDownload = (format: 'pdf' | 'jpg' | 'png') => {
     console.log('Downloading as:', format);
-    // TODO: Implement download functionality
+    alert(`Download as ${format.toUpperCase()} will be available soon!`);
   };
 
   return (
@@ -35,11 +36,12 @@ export default function EditorLayout({ templateId }: EditorLayoutProps) {
         onSave={handleSave}
         onDownload={handleDownload}
         templateId={templateId}
+        templateName={templateName}
       />
       
       <div className="flex-1 flex overflow-hidden">
         <EditorSidebar onFieldChange={handleFieldChange} />
-        <EditorCanvas templateId={templateId} />
+        <EditorCanvas templateId={templateId} documentData={documentData} />
       </div>
     </div>
   );
