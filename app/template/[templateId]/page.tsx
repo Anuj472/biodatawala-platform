@@ -1,43 +1,45 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import { allTemplates } from '@/lib/template-data';
-import Button from '@/components/common/Button';
-import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import Link from 'next/link'
+import { allTemplates } from '@/lib/template-data'
+import Button from '@/components/common/Button'
+import Header from '@/components/common/Header'
+import Footer from '@/components/common/Footer'
 
 interface TemplatePageProps {
-  params: {
-    templateId: string;
-  };
+  params: Promise<{
+    templateId: string
+  }>
 }
 
 export async function generateMetadata({ params }: TemplatePageProps): Promise<Metadata> {
-  const template = allTemplates.find((t) => t.id === params.templateId);
+  const { templateId } = await params
+  const template = allTemplates.find((t) => t.id === templateId)
   
   if (!template) {
     return {
       title: 'Template Not Found',
-    };
+    }
   }
 
   return {
     title: `${template.name} - BioDatawala Template`,
     description: template.description,
-  };
+  }
 }
 
-export default function TemplatePage({ params }: TemplatePageProps) {
-  const template = allTemplates.find((t) => t.id === params.templateId);
+export default async function TemplatePage({ params }: TemplatePageProps) {
+  const { templateId } = await params
+  const template = allTemplates.find((t) => t.id === templateId)
 
   if (!template) {
-    notFound();
+    notFound()
   }
 
   // Find related templates (same category)
   const relatedTemplates = allTemplates
     .filter((t) => t.category === template.category && t.id !== template.id)
-    .slice(0, 3);
+    .slice(0, 3)
 
   return (
     <>
@@ -84,7 +86,7 @@ export default function TemplatePage({ params }: TemplatePageProps) {
                       <div className="text-8xl mb-6">{getTemplateIcon(template.category)}</div>
                       <h3 className="text-2xl font-bold mb-4 text-gray-900">{template.name}</h3>
                       <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                        This is a preview of the template. Click "Use This Template" to start customizing with your own information.
+                        This is a preview of the template. Click &quot;Use This Template&quot; to start customizing with your own information.
                       </p>
                       <div className="flex flex-wrap gap-2 justify-center">
                         {template.tags.map((tag) => (
@@ -188,7 +190,7 @@ export default function TemplatePage({ params }: TemplatePageProps) {
       </main>
       <Footer />
     </>
-  );
+  )
 }
 
 function getTemplateIcon(category: string): string {
@@ -197,12 +199,12 @@ function getTemplateIcon(category: string): string {
     career: '💼',
     business: '🎯',
     creative: '🎨',
-  };
-  return icons[category] || '📄';
+  }
+  return icons[category] || '📄'
 }
 
 export async function generateStaticParams() {
   return allTemplates.map((template) => ({
     templateId: template.id,
-  }));
+  }))
 }
