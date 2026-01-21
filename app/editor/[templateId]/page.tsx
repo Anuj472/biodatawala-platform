@@ -4,13 +4,14 @@ import { allTemplates } from '@/lib/template-data'
 import EditorLayout from '@/components/editor/EditorLayout'
 
 interface EditorPageProps {
-  params: {
+  params: Promise<{
     templateId: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: EditorPageProps): Promise<Metadata> {
-  const template = allTemplates.find((t) => t.id === params.templateId)
+  const { templateId } = await params
+  const template = allTemplates.find((t) => t.id === templateId)
   
   return {
     title: template ? `Editing ${template.name} - BioDatawala` : 'Template Editor - BioDatawala',
@@ -18,15 +19,17 @@ export async function generateMetadata({ params }: EditorPageProps): Promise<Met
   }
 }
 
-export default function EditorPage({ params }: EditorPageProps) {
+export default async function EditorPage({ params }: EditorPageProps) {
+  const { templateId } = await params
+  
   // No authentication check - free for everyone
-  const template = allTemplates.find((t) => t.id === params.templateId)
+  const template = allTemplates.find((t) => t.id === templateId)
   
   if (!template) {
     notFound()
   }
 
-  return <EditorLayout templateId={params.templateId} templateName={template.name} />
+  return <EditorLayout templateId={templateId} templateName={template.name} />
 }
 
 export async function generateStaticParams() {

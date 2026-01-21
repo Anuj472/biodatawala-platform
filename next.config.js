@@ -2,20 +2,23 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['biodatawala.in'],
+    domains: ['biodatawala.in', 'localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
-  // Enable static export for better SEO
+  // Enable standalone output for Vercel
   output: 'standalone',
-  // Optimize for production
-  swcMinify: true,
   // Compression
   compress: true,
   // Performance optimizations
   poweredByHeader: false,
-  // i18n for multilingual support
-  i18n: {
-    locales: ['en', 'hi', 'mr', 'gu', 'ta', 'te', 'bn', 'kn', 'ml', 'pa'],
-    defaultLocale: 'en',
+  // Experimental features
+  experimental: {
+    optimizePackageImports: ['@/components'],
   },
 }
 
