@@ -16,13 +16,14 @@ export interface Template {
   id: string;
   name: string;
   description: string;
-  serviceId: number;
   category: string;
   style: TemplateStyle;
-  thumbnail: string;
-  previewUrl: string;
   isPremium: boolean;
   tags: string[];
+  preview?: string; // Emoji preview
+  thumbnail?: string; // Image thumbnail URL
+  previewUrl?: string; // Full preview URL
+  serviceId?: number; // Optional for backwards compatibility
 }
 
 export type TemplateStyle = 
@@ -35,7 +36,10 @@ export type TemplateStyle =
   | 'traditional'
   | 'colorful'
   | 'corporate'
-  | 'premium';
+  | 'premium'
+  | 'luxury'
+  | 'rustic'
+  | 'vintage';
 
 // User Types
 export interface User {
